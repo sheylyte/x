@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#17152d">
+
+    <title>LARCK - Start Party</title>
+
+    <link rel="stylesheet" href="page3.css">
+</head>
+
+<body>
+
+    <main class="party-create-page">
+
+        <!-- Close and return to Home -->
+        <button
+            type="button"
+            class="close-party"
+            id="closeParty"
+            aria-label="Back to Home"
+        >×</button>
+
+        <div class="party-content">
+
+            <div class="page-heading">
+                <span class="heading-tag">LARCK PARTY</span>
+                <h1>Create your room</h1>
+                <p>Bring your friends together and enjoy the moment.</p>
+            </div>
+
+            <!-- My Rooms -->
+            <section class="my-rooms-section">
+                <div class="section-heading">
+                    <h2>My Rooms</h2>
+                    <span>Tap to reuse</span>
+                </div>
+
+                <button
+                    type="button"
+                    class="saved-room"
+                    id="savedRoom"
+                    aria-label="Reuse SHEYLYTE room"
+                >
+                    <div class="saved-room-image">
+                        <img
+                            src="partyimage.jpeg"
+                            alt="SHEYLYTE room"
+                            id="savedRoomImage"
+                        >
+                        <span class="recording-dot"></span>
+                    </div>
+
+                    <span class="saved-room-name" id="savedRoomName">
+                        SHEYLYTE
+                    </span>
+                </button>
+            </section>
+
+            <!-- Room creation form -->
+            <section class="create-room-card">
+
+                <div class="field-group">
+                    <label class="field-label" for="roomImageInput">
+                        Select Room Image
+                    </label>
+
+                    <input
+                        type="file"
+                        id="roomImageInput"
+                        accept="image/*"
+                        hidden
+                    >
+
+                    <button
+                        type="button"
+                        class="image-upload"
+                        id="imageUploadButton"
+                    >
+                        <span class="upload-preview" id="uploadPreview">
+                            <svg viewBox="0 0 48 48" aria-hidden="true">
+                                <rect x="5" y="8" width="38" height="32" rx="7"/>
+                                <circle cx="17" cy="19" r="4"/>
+                                <path d="M8 34l11-10 7 7 5-5 9 9"/>
+                                <path d="M24 15v12m-5-5 5-5 5 5"/>
+                            </svg>
+                        </span>
+
+                        <span class="upload-copy">
+                            <strong id="uploadTitle">Upload Image</strong>
+                            <small id="uploadSubtitle">
+                                Choose a picture for your room
+                            </small>
+                        </span>
+
+                        <span class="upload-arrow">＋</span>
+                    </button>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label" for="roomName">
+                        Room name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="roomName"
+                        class="room-input"
+                        placeholder="Enter your room name"
+                        maxlength="40"
+                        autocomplete="off"
+                    >
+                </div>
+
+                <div class="field-group">
+                    <div class="description-heading">
+                        <label class="field-label" for="roomDescription">
+                            Room Description
+                        </label>
+                        <span id="descriptionCount">0/100</span>
+                    </div>
+
+                    <textarea
+                        id="roomDescription"
+                        class="room-input room-description"
+                        placeholder="Enter your room description"
+                        maxlength="100"
+                        rows="3"
+                    ></textarea>
+                </div>
+
+                <button
+                    type="button"
+                    class="start-party-button"
+                    id="startPartyButton"
+                >
+                    <span>Start PARTY</span>
+                    <span class="start-party-icon">➜</span>
+                </button>
+
+                <p class="form-message" id="formMessage" aria-live="polite"></p>
+
+            </section>
+
+            <p class="bottom-note">
+                Make a room. Invite your people. Enjoy LARCK.
+            </p>
+
+        </div>
+    </main>
+
+   <!-- Supabase library -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Connect LARCK to Supabase -->
+<script>
+    window.larckSupabase = window.supabase.createClient(
+        "https://hxtwdzvnqtxoutdetfoy.supabase.co",
+        "sb_publishable_hEot0ds6XIcLYo7Fj8xtUQ_0ICFxMBV"
+    );
+</script>
+
+<!-- Party page functionality -->
+<script src="page3.js"></script>
+</body>
+</html>

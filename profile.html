@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LARCK - Profile</title>
+
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+    <div class="profile-page">
+
+        <!-- =========================
+             TOP PROFILE / COVER
+        ========================== -->
+
+        <section class="profile-header">
+
+            <!-- Separate cover area -->
+            <div class="profile-cover">
+
+                <!-- Cover image will be loaded from Supabase -->
+                <img
+                    id="coverImage"
+                    src=""
+                    alt="Profile cover"
+                >
+
+                <div class="cover-overlay"></div>
+
+                <!-- Back button -->
+                <button class="back-button" id="backButton">
+                    <span>‹</span>
+                </button>
+
+                <!-- More button -->
+                <button class="more-button" id="moreButton">
+                    <span>•••</span>
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+                 CIRCULAR PROFILE PICTURE
+            ========================== -->
+
+            <div class="profile-picture-wrapper">
+
+                <div class="profile-picture-ring">
+
+                    <img
+                        id="profilePicture"
+                        src=""
+                        alt="Profile picture"
+                    >
+
+                
+                    <input
+                   type="file"
+                   id="profilePictureInput"
+                   accept="image/*"
+                   hidden
+                   >
+                </div>
+
+                <!-- Online indicator -->
+                <span class="online-dot"></span>
+
+            </div>
+
+
+            <!-- =========================
+                 USER INFORMATION
+            ========================== -->
+
+            <div class="profile-main-info">
+
+                <h1 id="username">
+                    Username
+                </h1>
+
+              <div class="profile-info-boxes">
+
+    <div class="larck-id-row">
+
+        <span id="larckId">
+            LARCK ID
+        </span>
+
+        <button
+            class="copy-id-button"
+            id="copyIdButton"
+            title="Copy LARCK ID"
+        >
+            ⧉
+        </button>
+
+    </div>
+
+    <div class="country-row">
+
+        <span id="countryFlag"></span>
+
+        <span id="countryName">
+            Country
+        </span>
+
+    </div>
+
+</div>
+            </div>
+
+        </section>
+
+
+
+        
+<!-- PROFILE OPTIONS MENU -->
+<div class="profile-options-menu" id="profileOptionsMenu" hidden>
+    <button type="button" data-profile-action="report">
+        🚩 Report User
+    </button>
+    <button type="button" data-profile-action="block" class="profile-block-option">
+        🚫 Block User
+    </button>
+</div>
+
+<!-- REPORT USER DIALOG -->
+<div class="profile-report-overlay" id="profileReportOverlay" hidden>
+    <form class="profile-report-dialog" id="profileReportForm">
+        <h2>Report User</h2>
+        <p>Tell us why you are reporting this user.</p>
+
+        <label for="profileReportCategory">Reason</label>
+        <select id="profileReportCategory" required>
+            <option value="">Choose a reason</option>
+            <option value="Harassment">Harassment or bullying</option>
+            <option value="Scam">Scam or fraud</option>
+            <option value="Inappropriate content">Inappropriate content</option>
+            <option value="Impersonation">Impersonation</option>
+            <option value="Spam">Spam</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="profileReportDescription">Details</label>
+        <textarea
+            id="profileReportDescription"
+            maxlength="2000"
+            placeholder="Describe what happened..."
+            required
+        ></textarea>
+
+        <div class="profile-report-actions">
+            <button type="button" id="cancelProfileReport">Cancel</button>
+            <button type="submit" id="submitProfileReport">Submit Report</button>
+        </div>
+    </form>
+</div>
+
+
+        <!-- =========================
+             PROFILE CONTENT
+        ========================== -->
+
+        <main class="profile-content">
+
+
+            <!-- =========================
+                 ACTION BUTTONS
+            ========================== -->
+
+
+            <!-- =========================
+                 ROLE BADGES
+            ========================== -->
+
+            <section class="profile-section roles-section">
+
+                <div class="role-badges" id="roleBadges">
+
+                    <!--
+                    Badges will be added here later
+                    depending on the user's roles.
+                    -->
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 BIO
+            ========================== -->
+
+            <section class="profile-section bio-section">
+
+                <h2>Bio</h2>
+
+                <p id="bioText">
+                    Welcome to my LARCK profile.
+                </p>
+
+            </section>
+
+
+            <!-- =========================
+                 LEVELS
+            ========================== -->
+
+            <section class="profile-section levels-section">
+
+                <h2>Levels</h2>
+
+                <div class="levels-container">
+
+                    <!-- Wealth -->
+
+                    <div class="level-card wealth-level">
+
+                        <div class="level-icon">
+                            💎
+                        </div>
+
+                        <div class="level-info">
+
+                            <span class="level-title">
+                                Wealth
+                            </span>
+
+                            <strong id="wealthLevel">
+                                Level 0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Stream -->
+
+                    <div class="level-card stream-level">
+
+                        <div class="level-icon">
+                            🎙️
+                        </div>
+
+                        <div class="level-info">
+
+                            <span class="level-title">
+                                Stream
+                            </span>
+
+                            <strong id="streamLevel">
+                                Level 0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 STATISTICS
+            ========================== -->
+
+            <section class="profile-section statistics-section">
+
+                <div class="statistics-grid">
+
+                    <div class="stat-item profile-stat-clickable" id="followingStat">
+
+                 <strong id="followingCount">
+                           0
+                       </strong>
+
+                      <span>
+                      Following
+                    </span>
+
+                   </div>
+
+                    <div class="stat-item profile-stat-clickable" id="fansStat">
+
+                     <strong id="fansCount">
+                            0
+                       </strong>
+
+                     <span>
+                        Fans
+                        </span>
+
+                     </div>
+
+                    <div class="stat-item visitor-stat" id="visitorStat">
+
+                  <strong id="visitorsCount">
+                      0
+                 </strong>
+
+                 <span>
+                 Visitors
+                  </span>
+
+                </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 TOP FANS
+            ========================== -->
+
+            <section class="profile-section top-fans-section">
+
+                <div class="section-heading">
+
+                    <h2>
+                        Top Fans
+                    </h2>
+
+                    <span>
+                        See all
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="top-fans-list"
+                    id="topFansList"
+                >
+
+                    <!-- Top fans will be loaded here -->
+
+                    <div class="empty-fans">
+
+                        <span class="empty-fans-icon">
+                            ♡
+                        </span>
+
+                        <p>
+                            No top fans yet
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+  <div class="edit-profile-bottom" id="otherUserActions">
+
+    <button
+        class="edit-profile-button"
+        id="editProfileButton"
+    >
+        Edit Self
+    </button>
+
+    <button class="follow-button" id="followButton">
+        Follow
+    </button>
+
+    <button class="message-button" id="messageButton">
+        Message
+    </button>
+
+</div>
+        </main>
+
+
+        <!-- =========================================================
+     FOLLOWING / FANS PANEL
+========================================================= -->
+
+<div class="connections-panel" id="connectionsPanel">
+
+    <div class="connections-header">
+
+        <button
+            class="connections-back-button"
+            id="connectionsBackButton"
+        >
+            <span>‹</span>
+        </button>
+
+        <h1 id="connectionsTitle">
+            Following
+        </h1>
+
+    </div>
+
+
+    <div class="connections-container">
+
+        <div
+            class="connections-list"
+            id="connectionsList"
+        >
+
+            <div class="connections-loading">
+                Loading...
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+    </div>
+
+    <!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Profile JavaScript -->
+    <script src="profile.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,2091 @@
+/* =========================================================
+   LARCK PROFILE PAGE
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f7f7f9;
+    color: #222;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+.profile-page {
+    width: 100%;
+    min-height: 100vh;
+
+    padding-bottom: 90px;
+
+    background: #f7f7f9;
+}
+
+
+/* =========================================================
+   PROFILE HEADER
+========================================================= */
+
+.profile-header {
+    position: relative;
+
+    width: 100%;
+
+    background: #ffffff;
+
+    padding-bottom: 18px;
+}
+
+
+/* =========================================================
+   COVER
+========================================================= */
+
+.profile-cover {
+    position: relative;
+
+    width: 100%;
+    height: 230px;
+
+    overflow: hidden;
+
+    background: #7b22c8;
+}
+
+.profile-cover img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* Dark overlay on cover */
+
+.cover-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.28)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-button,
+.more-button {
+    position: absolute;
+
+    top: 18px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.back-button {
+    left: 16px;
+}
+
+.more-button {
+    right: 16px;
+}
+
+.back-button span {
+    font-size: 32px;
+    line-height: 1;
+
+    transform: translateY(-2px);
+}
+
+.more-button span {
+    font-size: 17px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   PROFILE PICTURE
+========================================================= */
+
+.profile-picture-wrapper {
+    position: relative;
+
+    width: 106px;
+    height: 106px;
+
+    margin: -53px auto 0;
+
+    z-index: 10;
+}
+
+
+/* White ring */
+
+.profile-picture-ring {
+    width: 106px;
+    height: 106px;
+
+    padding: 4px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.16);
+}
+
+.profile-picture-ring img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    display: block;
+
+    background: #eeeeee;
+}
+
+
+/* Online dot */
+
+.online-dot {
+    position: absolute;
+
+    right: 3px;
+    bottom: 6px;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    background: #25d366;
+
+    border: 4px solid #ffffff;
+}
+
+
+/* =========================================================
+   USER INFORMATION
+========================================================= */
+
+.profile-main-info {
+    text-align: center;
+
+    padding: 10px 20px 0;
+}
+
+.profile-main-info h1 {
+    font-size: 24px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    margin-bottom: 6px;
+
+    color: #202020;
+}
+
+
+/* LARCK ID */
+
+.larck-id-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+.copy-id-button {
+    width: 25px;
+    height: 25px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #777;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    border-radius: 6px;
+}
+
+.copy-id-button:active {
+    background: #eeeeee;
+}
+
+
+/* Country */
+
+.country-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    margin-top: 6px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.profile-content {
+    width: 100%;
+
+    max-width: 620px;
+
+    margin: 0 auto;
+
+    padding: 0 14px;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.profile-actions {
+    display: flex;
+
+    gap: 9px;
+
+    width: 100%;
+
+    margin: 16px 0;
+}
+
+.profile-action {
+    flex: 1;
+
+    height: 43px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: transform 0.15s ease;
+}
+
+.profile-action:active {
+    transform: scale(0.97);
+}
+
+
+/* Edit */
+
+.edit-action {
+    background: #eeeeF2;
+
+    color: #333;
+}
+
+
+/* Follow */
+
+.follow-action {
+    background: #7b22c8;
+
+    color: #ffffff;
+}
+
+
+/* Message */
+
+.message-action {
+    background: #08c9c5;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+.profile-section {
+    background: #ffffff;
+
+    border-radius: 17px;
+
+    padding: 17px;
+
+    margin-bottom: 13px;
+
+    box-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.profile-section h2 {
+    font-size: 16px;
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
+
+    color: #222;
+}
+
+
+/* =========================================================
+   ROLE BADGES
+========================================================= */
+
+.roles-section {
+    padding: 13px 15px;
+}
+
+.role-badges {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.role-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    background: #f3e9fa;
+
+    color: #7020ad;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   BIO
+========================================================= */
+
+.bio-section p {
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   LEVELS
+========================================================= */
+
+.levels-container {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+.level-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 13px;
+
+    border-radius: 14px;
+
+    background: #f8f8fa;
+}
+
+.level-icon {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    font-size: 19px;
+} 
+
+.level-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.level-title {
+    font-size: 11px;
+
+    color: #888;
+}
+
+.level-info strong {
+    font-size: 14px;
+
+    color: #333;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.statistics-section {
+    padding: 18px 10px;
+}
+
+.statistics-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+}
+
+.stat-item {
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    position: relative;
+}
+
+.stat-item:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+
+    top: 8px;
+
+    width: 1px;
+
+    height: 30px;
+
+    background: #e5e5e5;
+}
+
+.stat-item strong {
+    font-size: 18px;
+
+    font-weight: 700;
+
+    color: #222;
+}
+
+.stat-item span {
+    font-size: 11px;
+
+    color: #888;
+}
+
+
+/* =========================================================
+   TOP FANS
+========================================================= */
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 13px;
+}
+
+.section-heading h2 {
+    margin: 0;
+}
+
+.section-heading > span {
+    font-size: 12px;
+
+    color: #8a25c7;
+
+    font-weight: 600;
+}
+
+.top-fans-list {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    overflow-x: auto;
+
+    padding-bottom: 3px;
+
+    scrollbar-width: none;
+}
+
+.top-fans-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Empty fans */
+
+.empty-fans {
+    width: 100%;
+
+    text-align: center;
+
+    padding: 18px 0 8px;
+
+    color: #999;
+}
+
+.empty-fans-icon {
+    display: block;
+
+    font-size: 27px;
+
+    margin-bottom: 7px;
+
+    color: #c9c9c9;
+}
+
+.empty-fans p {
+    font-size: 12px;
+}
+
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .profile-cover {
+        height: 210px;
+    }
+
+    .profile-main-info h1 {
+        font-size: 22px;
+    }
+
+    .profile-picture-wrapper,
+    .profile-picture-ring {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-picture-wrapper {
+        margin-top: -50px;
+    }
+
+    .levels-container {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-content {
+        padding: 0 11px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 350px) {
+
+    .profile-cover {
+        height: 195px;
+    }
+
+    .profile-actions {
+        gap: 6px;
+    }
+
+    .profile-action {
+        font-size: 12px;
+    }
+
+}
+
+/* =========================================================
+   EDIT SELF — BOTTOM
+========================================================= */
+
+.edit-profile-bottom {
+    width: 100%;
+
+    padding: 4px 0 25px;
+}
+
+.edit-profile-button {
+    width: 100%;
+    height: 32px;
+    border: none;
+    border-radius: 9px;
+    background: #7b20c9;
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.edit-profile-button:active {
+    transform: scale(0.98);
+}
+
+/* =========================================================
+   FIX PROFILE PAGE TO ANDROID SCREEN
+========================================================= */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.profile-page {
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Keep the profile content inside the phone screen */
+.profile-header {
+    flex-shrink: 0;
+}
+
+/* Make the main profile area fit the remaining screen */
+.profile-page main {
+    height: calc(100dvh - 230px);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   FIX PROFILE TO PHONE SCREEN
+========================================================= */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+}
+
+body {
+    min-height: 100dvh;
+}
+
+.profile-page {
+    width: 100%;
+    height: 100dvh;
+    min-height: 0;
+
+    padding-bottom: 0;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   KEEP HEADER INSIDE SCREEN
+========================================================= */
+
+.profile-header {
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   PROFILE CONTENT
+========================================================= */
+
+.profile-content {
+    width: 100%;
+    max-width: 620px;
+
+    margin: 0 auto;
+
+    padding: 0 12px 8px;
+
+    flex: 1;
+
+    min-height: 0;
+
+    overflow: auto;
+}
+
+
+/* =========================================================
+   COMPACT ANDROID LAYOUT
+========================================================= */
+
+@media (max-width: 480px) {
+
+    /* COVER */
+
+    .profile-cover {
+        height: 175px;
+    }
+
+
+    /* PROFILE PHOTO */
+
+    .profile-picture-wrapper {
+        width: 88px;
+        height: 88px;
+
+        margin-top: -44px;
+    }
+
+    .profile-picture-ring {
+        width: 88px;
+        height: 88px;
+
+        padding: 3px;
+    }
+
+    .online-dot {
+        width: 17px;
+        height: 17px;
+
+        right: 1px;
+        bottom: 4px;
+
+        border-width: 3px;
+    }
+
+
+    /* USER INFORMATION */
+
+    .profile-main-info {
+        padding: 6px 12px 0;
+    }
+
+    .profile-main-info h1 {
+        font-size: 21px;
+
+        margin-bottom: 3px;
+    }
+
+    .larck-id-row {
+        font-size: 12px;
+    }
+
+    .copy-id-button {
+        width: 22px;
+        height: 22px;
+
+        font-size: 13px;
+    }
+
+    .country-row {
+        margin-top: 3px;
+
+        font-size: 12px;
+    }
+
+
+    /* CONTENT */
+
+    .profile-content {
+        padding: 0 10px 5px;
+    }
+
+
+    /* ACTION BUTTONS */
+
+    .profile-actions {
+        margin: 8px 0;
+
+        gap: 7px;
+    }
+
+    .profile-action {
+        height: 36px;
+
+        border-radius: 11px;
+
+        font-size: 12px;
+    }
+
+
+    /* GENERAL SECTIONS */
+
+    .profile-section {
+        padding: 10px 12px;
+
+        margin-bottom: 7px;
+
+        border-radius: 13px;
+    }
+
+    .profile-section h2 {
+        font-size: 14px;
+
+        margin-bottom: 7px;
+    }
+
+
+    /* ROLES */
+
+    .roles-section {
+        padding: 9px 11px;
+    }
+
+    .role-badges {
+        gap: 5px;
+    }
+
+    .role-badge {
+        padding: 5px 8px;
+
+        font-size: 10px;
+    }
+
+
+    /* BIO */
+
+    .bio-section p {
+        font-size: 12px;
+
+        line-height: 1.35;
+    }
+
+
+    /* LEVELS */
+
+    .levels-container {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 7px;
+    }
+
+    .level-card {
+        gap: 7px;
+
+        padding: 8px;
+
+        border-radius: 10px;
+    }
+
+    .level-icon {
+        width: 32px;
+        height: 32px;
+
+        border-radius: 9px;
+
+        font-size: 15px;
+    }
+
+    .level-info {
+        gap: 1px;
+    }
+
+    .level-title {
+        font-size: 9px;
+    }
+
+    .level-info strong {
+        font-size: 12px;
+    }
+
+
+    /* STATISTICS */
+
+    .statistics-section {
+        padding: 10px 6px;
+    }
+
+    .stat-item {
+        gap: 2px;
+    }
+
+    .stat-item strong {
+        font-size: 15px;
+    }
+
+    .stat-item span {
+        font-size: 9px;
+    }
+
+    .stat-item:not(:last-child)::after {
+        top: 4px;
+
+        height: 25px;
+    }
+
+
+    /* TOP FANS */
+
+    .section-heading {
+        margin-bottom: 5px;
+    }
+
+    .section-heading > span {
+        font-size: 10px;
+    }
+
+    .empty-fans {
+        padding: 8px 0 4px;
+    }
+
+    .empty-fans-icon {
+        font-size: 21px;
+
+        margin-bottom: 3px;
+    }
+
+    .empty-fans p {
+        font-size: 10px;
+    }
+
+
+    /* EDIT SELF */
+
+    .edit-profile-bottom {
+        padding: 2px 0 5px;
+    }
+
+    .edit-profile-button {
+        height: 38px;
+
+        border-radius: 11px;
+
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL ANDROID PHONES
+========================================================= */
+
+@media (max-width: 350px) {
+
+    .profile-cover {
+        height: 155px;
+    }
+
+    .profile-picture-wrapper,
+    .profile-picture-ring {
+        width: 78px;
+        height: 78px;
+    }
+
+    .profile-picture-wrapper {
+        margin-top: -39px;
+    }
+
+    .profile-main-info h1 {
+        font-size: 19px;
+    }
+
+    .profile-section {
+        padding: 8px 10px;
+
+        margin-bottom: 5px;
+    }
+
+    .profile-section h2 {
+        font-size: 13px;
+
+        margin-bottom: 5px;
+    }
+
+    .level-card {
+        padding: 6px;
+    }
+
+    .level-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .stat-item strong {
+        font-size: 14px;
+    }
+
+    .edit-profile-button {
+        height: 35px;
+    }
+}
+
+/* =========================================================
+   FINAL COMPACT PROFILE — EVERYTHING VISIBLE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .profile-page {
+        height: 100dvh;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .profile-header {
+        padding-bottom: 5px;
+    }
+
+    /* COVER */
+    .profile-cover {
+        height: 135px;
+    }
+
+    /* PROFILE PICTURE */
+    .profile-picture-wrapper {
+        width: 72px;
+        height: 72px;
+        margin-top: -36px;
+    }
+
+    .profile-picture-ring {
+        width: 72px;
+        height: 72px;
+        padding: 3px;
+    }
+
+    .online-dot {
+        width: 14px;
+        height: 14px;
+        right: 0;
+        bottom: 3px;
+        border-width: 2px;
+    }
+
+    /* USER INFORMATION */
+    .profile-main-info {
+        padding: 4px 10px 0;
+    }
+
+    .profile-main-info h1 {
+        font-size: 19px;
+        margin-bottom: 1px;
+    }
+
+    .larck-id-row {
+        font-size: 10px;
+    }
+
+    .copy-id-button {
+        width: 19px;
+        height: 19px;
+        font-size: 11px;
+    }
+
+    .country-row {
+        margin-top: 1px;
+        font-size: 10px;
+    }
+
+    /* CONTENT */
+    .profile-content {
+        padding: 0 8px 3px;
+        overflow: auto;
+    }
+
+    /* ACTIONS */
+    .profile-actions {
+        margin: 5px 0;
+        gap: 5px;
+    }
+
+    .profile-action {
+        height: 31px;
+        border-radius: 9px;
+        font-size: 10px;
+    }
+
+    /* ALL SECTIONS */
+    .profile-section {
+        padding: 7px 9px;
+        margin-bottom: 5px;
+        border-radius: 10px;
+    }
+
+    .profile-section h2 {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+
+    /* ROLES */
+    .roles-section {
+        padding: 6px 8px;
+    }
+
+    .role-badges {
+        gap: 4px;
+    }
+
+    .role-badge {
+        padding: 4px 7px;
+        font-size: 9px;
+    }
+
+    /* BIO */
+    .bio-section p {
+        font-size: 10px;
+        line-height: 1.25;
+    }
+
+    /* LEVELS */
+    .levels-container {
+        gap: 5px;
+    }
+
+    .level-card {
+        gap: 5px;
+        padding: 6px;
+        border-radius: 8px;
+    }
+
+    .level-icon {
+        width: 27px;
+        height: 27px;
+        border-radius: 7px;
+        font-size: 13px;
+    }
+
+    .level-info {
+        gap: 0;
+    }
+
+    .level-title {
+        font-size: 8px;
+    }
+
+    .level-info strong {
+        font-size: 10px;
+    }
+
+    /* STATISTICS */
+    .statistics-section {
+        padding: 7px 4px;
+    }
+
+    .stat-item {
+        gap: 1px;
+    }
+
+    .stat-item strong {
+        font-size: 13px;
+    }
+
+    .stat-item span {
+        font-size: 8px;
+    }
+
+    .stat-item:not(:last-child)::after {
+        top: 2px;
+        height: 21px;
+    }
+
+    /* TOP FANS */
+    .section-heading {
+        margin-bottom: 3px;
+    }
+
+    .section-heading > span {
+        font-size: 9px;
+    }
+
+    .empty-fans {
+        padding: 5px 0 2px;
+    }
+
+    .empty-fans-icon {
+        font-size: 17px;
+        margin-bottom: 1px;
+    }
+
+    .empty-fans p {
+        font-size: 9px;
+    }
+
+    /* EDIT SELF */
+    .edit-profile-bottom {
+        padding: 1px 0 3px;
+    }
+
+    .edit-profile-button {
+        height: 32px;
+        border-radius: 9px;
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 350px) {
+
+    .profile-cover {
+        height: 120px;
+    }
+
+    .profile-picture-wrapper,
+    .profile-picture-ring {
+        width: 64px;
+        height: 64px;
+    }
+
+    .profile-picture-wrapper {
+        margin-top: -32px;
+    }
+
+    .profile-main-info h1 {
+        font-size: 17px;
+    }
+
+    .profile-section {
+        padding: 5px 7px;
+        margin-bottom: 4px;
+    }
+
+    .profile-section h2 {
+        font-size: 11px;
+        margin-bottom: 3px;
+    }
+
+    .bio-section p {
+        font-size: 9px;
+    }
+
+    .level-card {
+        padding: 5px;
+    }
+
+    .level-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .stat-item strong {
+        font-size: 12px;
+    }
+
+    .edit-profile-button {
+        height: 29px;
+    }
+}
+
+/* =========================================
+   BOTTOM PROFILE ACTIONS
+========================================= */
+
+.profile-bottom-actions {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    padding: 1px 0 3px;
+}
+
+.profile-bottom-actions button {
+    flex: 1;
+    height: 32px;
+    border: none;
+    border-radius: 9px;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* FOLLOW */
+
+.profile-bottom-actions .follow-button {
+    background: #7b20c9;
+    color: #ffffff;
+}
+
+.profile-bottom-actions .follow-button:active {
+    transform: scale(0.97);
+}
+
+/* MESSAGE */
+
+.profile-bottom-actions .message-button {
+    background: #08c9c5;
+    color: #ffffff;
+}
+
+.profile-bottom-actions .message-button:active {
+    transform: scale(0.97);
+}
+
+/* EDIT SELF */
+
+.profile-bottom-actions .edit-profile-button {
+    width: 100%;
+    background: #7b20c9;
+    color: #ffffff;
+}
+
+/* Small phones */
+
+@media (max-width: 350px) {
+
+    .profile-bottom-actions {
+        gap: 6px;
+        padding: 1px 0 3px;
+    }
+
+    .profile-bottom-actions button {
+        height: 29px;
+        border-radius: 8px;
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================
+   FOLLOW + MESSAGE — BOTTOM BUTTONS
+========================================= */
+
+.follow-button,
+.message-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: calc(50% - 4px) !important;
+    height: 32px !important;
+
+    border: none !important;
+    border-radius: 9px !important;
+
+    font-size: 10px !important;
+    font-weight: 700 !important;
+
+    cursor: pointer;
+    box-sizing: border-box;
+
+    margin: 1px 0 3px !important;
+}
+
+/* FOLLOW */
+
+.follow-button {
+    background: #7b20c9 !important;
+    color: #ffffff !important;
+}
+
+/* MESSAGE */
+
+.message-button {
+    background: #08c9c5 !important;
+    color: #ffffff !important;
+}
+
+/* Press effect */
+
+.follow-button:active,
+.message-button:active {
+    transform: scale(0.97);
+}
+
+
+/* Small phones */
+
+@media (max-width: 350px) {
+
+    .follow-button,
+    .message-button {
+        height: 29px !important;
+        border-radius: 8px !important;
+        font-size: 9px !important;
+    }
+}
+
+/* =========================================
+   LARCK ID + COUNTRY BOXES
+========================================= */
+
+.profile-info-boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-top: 3px;
+}
+
+/* LARCK ID BOX */
+
+.profile-info-boxes .larck-id-row {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+
+    min-height: 22px;
+    padding: 3px 7px;
+
+    background: #f7f7f9;
+    border: 1px solid #eeeeF2;
+    border-radius: 7px;
+
+    font-size: 9px;
+    color: #555;
+}
+
+/* COUNTRY BOX */
+
+.profile-info-boxes .country-row {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    min-height: 22px;
+    padding: 3px 7px;
+
+    background: #f7f7f9;
+    border: 1px solid #eeeeF2;
+    border-radius: 7px;
+
+    font-size: 9px;
+    color: #666;
+}
+
+/* COUNTRY FLAG */
+
+.profile-info-boxes #countryFlag {
+    font-size: 12px;
+    line-height: 1;
+}
+
+/* COPY BUTTON */
+
+.profile-info-boxes .copy-id-button {
+    width: 16px;
+    height: 16px;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    background: transparent;
+
+    font-size: 10px;
+    color: #777;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 350px) {
+
+    .profile-info-boxes {
+        gap: 3px;
+    }
+
+    .profile-info-boxes .larck-id-row,
+    .profile-info-boxes .country-row {
+        min-height: 20px;
+        padding: 3px 6px;
+        border-radius: 6px;
+        font-size: 8px;
+    }
+
+    .profile-info-boxes #countryFlag {
+        font-size: 11px;
+    }
+}
+
+/* =========================================================
+   FOLLOWING / FANS PANEL
+========================================================= */
+
+.profile-stat-clickable {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.profile-stat-clickable:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================================
+   CONNECTIONS PANEL
+========================================================= */
+
+.connections-panel {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100dvh;
+
+    background: #ffffff;
+
+    z-index: 1000;
+
+    display: none;
+
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+/* Show panel */
+
+.connections-panel.show {
+    display: flex;
+}
+
+
+/* =========================================================
+   CONNECTIONS HEADER
+========================================================= */
+
+.connections-header {
+    position: relative;
+
+    width: 100%;
+    height: 88px;
+
+    flex-shrink: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5229d 0%,
+            #d52ad2 48%,
+            #8b2de8 100%
+        );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    border-radius:
+        0 0 28px 28px;
+}
+
+
+.connections-header h1 {
+    font-size: 25px;
+
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.connections-back-button {
+    position: absolute;
+
+    left: 18px;
+    top: 13px;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.22);
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.connections-back-button span {
+    display: block;
+
+    font-size: 43px;
+
+    font-weight: 300;
+
+    line-height: 38px;
+
+    margin-top: -4px;
+
+    margin-left: -2px;
+}
+
+
+.connections-back-button:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================================================
+   CONNECTIONS CONTENT
+========================================================= */
+
+.connections-container {
+    width: 100%;
+
+    flex: 1;
+
+    min-height: 0;
+
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    padding:
+        27px 18px 35px;
+}
+
+
+.connections-list {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+
+/* =========================================================
+   CONNECTION CARD
+========================================================= */
+
+.connection-card {
+    width: 100%;
+
+    min-height: 92px;
+
+    background: #ffffff;
+
+    border: 1px solid #e7e7e7;
+
+    border-radius: 18px;
+
+    padding: 10px 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.07);
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+
+    transition:
+        transform 0.15s ease;
+}
+
+
+.connection-card:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================================
+   CONNECTION AVATAR
+========================================================= */
+
+.connection-avatar {
+    width: 68px;
+    height: 68px;
+
+    border-radius: 14px;
+
+    object-fit: cover;
+
+    flex-shrink: 0;
+
+    background: #eeeeee;
+}
+
+
+/* =========================================================
+   CONNECTION INFORMATION
+========================================================= */
+
+.connection-information {
+    min-width: 0;
+
+    flex: 1;
+
+    padding-left: 11px;
+
+    padding-right: 15px;
+
+    align-self: center;
+}
+
+
+.connection-name {
+    color: #292733;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    line-height: 1.25;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    margin-bottom: 5px;
+}
+
+
+.connection-id {
+    color: #a1a0ac;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   LOADING / EMPTY
+========================================================= */
+
+.connections-loading,
+.connections-empty {
+    width: 100%;
+
+    padding: 35px 10px;
+
+    text-align: center;
+
+    color: #96939f;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .connections-header {
+        height: 86px;
+    }
+
+    .connections-header h1 {
+        font-size: 24px;
+    }
+
+    .connections-back-button {
+        width: 46px;
+        height: 46px;
+
+        left: 16px;
+        top: 13px;
+    }
+
+    .connections-back-button span {
+        font-size: 41px;
+    }
+
+    .connections-container {
+        padding:
+            24px 16px 30px;
+    }
+
+    .connection-card {
+        min-height: 86px;
+
+        padding:
+            9px 10px;
+    }
+
+    .connection-avatar {
+        width: 62px;
+        height: 62px;
+
+        border-radius: 13px;
+    }
+
+    .connection-information {
+        padding-left: 9px;
+    }
+
+    .connection-name {
+        font-size: 13px;
+    }
+
+    .connection-id {
+        font-size: 10px;
+    }
+}
+
+
+
+/* PROFILE REPORT AND BLOCK MENU */
+.profile-options-menu {
+    position: fixed;
+    top: 75px;
+    right: 14px;
+    z-index: 150;
+    width: 190px;
+    padding: 7px;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.16);
+}
+
+.profile-options-menu[hidden],
+.profile-report-overlay[hidden] {
+    display: none !important;
+}
+
+.profile-options-menu button {
+    width: 100%;
+    padding: 13px 11px;
+    border: none;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #29272e;
+    text-align: left;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.profile-options-menu button:active {
+    background: #f5f2fa;
+}
+
+.profile-options-menu .profile-block-option {
+    color: #d93025;
+}
+
+.profile-report-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(20, 12, 30, 0.55);
+}
+
+.profile-report-dialog {
+    width: 100%;
+    max-width: 380px;
+    max-height: 90dvh;
+    overflow-y: auto;
+    padding: 22px;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.profile-report-dialog h2 {
+    margin-bottom: 8px;
+    color: #54209a;
+    font-size: 20px;
+}
+
+.profile-report-dialog p {
+    margin-bottom: 16px;
+    color: #777777;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.profile-report-dialog label {
+    display: block;
+    margin: 13px 0 6px;
+    color: #333333;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.profile-report-dialog select,
+.profile-report-dialog textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #e5e0eb;
+    border-radius: 10px;
+    background: #faf9fc;
+    color: #29272e;
+    font: inherit;
+    font-size: 13px;
+}
+
+.profile-report-dialog textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.profile-report-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+    margin-top: 18px;
+}
+
+.profile-report-actions button {
+    padding: 11px 14px;
+    border: none;
+    border-radius: 10px;
+    background: #f0edf5;
+    color: #54209a;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.profile-report-actions button[type="submit"] {
+    background: #7b20c9;
+    color: #ffffff;
+}
+
+.profile-report-actions button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}

@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LARCK - My Points</title>
+    <link rel="stylesheet" href="points.css">
+</head>
+<body>
+
+    <main class="points-page">
+
+        <!-- GRADIENT HEADER -->
+        <header class="points-hero">
+
+            <div class="points-topbar">
+                <button class="back-button" id="backButton" aria-label="Go back">‹</button>
+                <h1>My Points</h1>
+                <button class="history-button" id="historyButton">
+                    <span class="history-icon">◷</span>
+                    History
+                </button>
+            </div>
+
+            
+<div class="balance-area">
+    <p class="balance-label">Available Coins</p>
+    <h2 id="pointsBalance">0</h2>
+
+    <div class="balance-badges">
+        <span class="value-badge" id="pointsValue">$0.00</span>
+        <span class="conversion-badge">Dollar equivalent</span>
+    </div>
+</div>
+
+
+            <div class="points-decoration" aria-hidden="true">✦</div>
+        </header>
+
+        <!-- ACTION CARDS -->
+        <section class="action-cards">
+
+            <button class="action-card" id="exchangeButton">
+                <span class="action-icon exchange-icon">↔</span>
+                <span class="action-title">Exchange</span>
+                <span class="action-description">Points to coins</span>
+            </button>
+
+            <button class="action-card" id="withdrawButton">
+                <span class="action-icon withdraw-icon">▣</span>
+                <span class="action-title">Withdraw</span>
+                <span class="action-description">Check withdrawal options</span>
+            </button>
+
+        </section>
+
+        <!-- RECENT ACTIVITY -->
+        <section class="activity-section">
+
+            <div class="section-heading">
+                <h2>Recent activity</h2>
+                <button id="seeAllButton">See all</button>
+            </div>
+
+
+<div class="activity-list" id="activityList">
+    <p class="empty-activity">No recent activity yet</p>
+</div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- HOW POINTS WORK -->
+        <section class="points-guide">
+            <h2>How points work</h2>
+
+            <div class="guide-item">
+                <span class="guide-number">1</span>
+                <p>Points can be earned through activities and gifts on LARCK.</p>
+            </div>
+
+            <div class="guide-item">
+                <span class="guide-number">2</span>
+                <p>Exchange points for coins when this feature is available.</p>
+            </div>
+
+            <div class="guide-item">
+                <span class="guide-number">3</span>
+                <p>Eligible points may be redeemable according to LARCK's rules.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- HISTORY OVERLAY -->
+    <section class="history-overlay" id="historyOverlay" aria-hidden="true">
+        <header class="history-header">
+            <button id="closeHistory" aria-label="Close history">‹</button>
+            <h2>Points History</h2>
+        </header>
+
+        <div class="history-filters">
+            <button class="filter-button active" data-filter="all">All</button>
+            <button class="filter-button" data-filter="income">Income</button>
+            <button class="filter-button" data-filter="outgoing">Outgoing</button>
+        </div>
+
+        <div class="history-summary">
+    <div>
+        <span>Total income</span>
+        <strong>—</strong>
+    </div>
+    <div>
+        <span>Total outgoing</span>
+        <strong>—</strong>
+    </div>
+</div>
+
+        <div class="history-items" id="historyItems"></div>
+        <p class="history-note">Sample history only. Real transactions will appear when connected.</p>
+    </section>
+
+    <!-- SIMPLE ACTION MESSAGE -->
+    <div class="message-overlay" id="messageOverlay" aria-hidden="true">
+        <div class="message-card">
+            <button id="closeMessage" aria-label="Close">×</button>
+            <div class="message-symbol">✦</div>
+            <h2 id="messageTitle">Coming soon</h2>
+            <p id="messageText">This feature will be available later.</p>
+            <button class="message-ok" id="messageOk">Okay</button>
+        </div>
+    </div>
+
+    <script src="points.js"></script>
+</body>
+</html>

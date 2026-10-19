@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Visitors - LARCK</title>
+
+    <link rel="stylesheet" href="visitors.css">
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         TOP HEADER
+    ====================================================== -->
+
+    <header class="visitors-header">
+
+        <button class="back-button" id="backButton">
+            <span>‹</span>
+        </button>
+
+        <h1>Visitors</h1>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="visitors-container">
+
+        <div class="visitors-content">
+
+            <!-- DESCRIPTION -->
+
+            <p class="visitors-description">
+                People who opened your profile. Only you can see this list.
+            </p>
+
+
+            <!-- =================================================
+                 FILTER TABS
+            ================================================== -->
+
+            <div class="visitor-filters">
+
+                <button
+                    class="visitor-filter active"
+                    id="todayFilter"
+                    data-filter="today"
+                >
+                    Today · <span id="todayCount">0</span>
+                </button>
+
+                <button
+                    class="visitor-filter"
+                    id="weekFilter"
+                    data-filter="week"
+                >
+                    This week · <span id="weekCount">0</span>
+                </button>
+
+                <button
+                    class="visitor-filter"
+                    id="monthFilter"
+                    data-filter="month"
+                >
+                    This month · <span id="monthCount">0</span>
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 VISITORS
+            ================================================== -->
+
+            <div class="visitors-list" id="visitorsList">
+
+                <div class="loading-visitors">
+                    Loading visitors...
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         SUPABASE
+    ====================================================== -->
+
+
+     <!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <!-- =====================================================
+         VISITORS JAVASCRIPT
+    ====================================================== -->
+
+    <script src="visitors.js"></script>
+
+</body>
+</html>

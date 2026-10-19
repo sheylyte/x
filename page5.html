@@ -1,0 +1,2212 @@
+<!DOCTYPE html>  <html lang="en">  <head>  <meta charset="UTF-8">  
+
+<meta  
+    name="viewport"  
+    content="width=device-width, initial-scale=1.0"  
+>  
+
+<title>LARCK - Me</title>   
+
+<link rel="stylesheet" href="page5.css">
+
+</head>  <body>  
+    
+    <!-- =========================================  
+     TOP PROFILE AREA  
+========================================= -->  
+
+<header class="profile-header">  <div class="profile-background"></div>  
+
+<div class="profile-area">  
+
+
+    <!-- PROFILE AVATAR -->  
+
+    <div class="profile-avatar" id="profileAvatarContainer">
+
+    <span id="profileAvatar">0</span>
+</div>  
+
+
+    <!-- USER INFORMATION -->  
+
+    <div class="profile-information">  
+
+        <div class="profile-name">  
+
+            <span  
+                class="username"  
+                id="username"  
+            >  
+                Loading...  
+            </span>  
+
+            <span  
+                class="country-flag"  
+                id="countryFlag"  
+            >  
+                🌍  
+            </span>  
+
+        </div>  
+
+
+        <div class="profile-id">  
+
+            <span id="profileId">  
+                ID: Loading...  
+            </span>  
+
+            <button  
+                class="copy-id"  
+                id="copyId"  
+                title="Copy ID"  
+                type="button"  
+            >  
+
+                <svg viewBox="0 0 24 24">  
+
+                    <rect  
+                        x="8"  
+                        y="8"  
+                        width="11"  
+                        height="11"  
+                        rx="2"  
+                    ></rect>  
+
+                    <path  
+                        d="M16 8V6  
+                           a2 2 0 0 0-2-2H6  
+                           a2 2 0 0 0-2 2v8  
+                           a2 2 0 0 0 2 2h2"  
+                    ></path>  
+
+                </svg>  
+
+            </button>  
+
+        </div>  
+
+    </div>  
+
+
+    <!-- PROFILE ARROW -->  
+
+    <button  
+        class="profile-arrow"  
+        id="profileArrow"  
+        type="button"  
+    >  
+
+        <svg viewBox="0 0 24 24">  
+
+            <path d="M9 5l7 7-7 7"></path>  
+
+        </svg>  
+
+    </button>  
+
+</div>  
+
+
+<!-- =====================================  
+     FOLLOWING / FANS / VISITORS 
+====================================== -->  
+
+<div class="profile-stats">  
+
+   <div class="stat" id="followingStat">
+    <strong id="followingCount">0</strong>
+    <span>Following</span>
+</div>
+
+<div class="stat" id="fansStat">
+    <strong id="fansCount">0</strong>
+    <span>Fans</span>
+</div>
+
+
+    <div class="stat" id="visitorsStat">
+    <strong id="visitorsCount">0</strong>
+    <span>Visitors</span>
+</div>
+
+</div>
+
+<!-- =====================================
+     FOLLOWING / FANS / VISITORS OVERLAY
+====================================== -->
+
+<div id="connectionsOverlay" class="connections-overlay">
+
+    <!-- HEADER -->
+    <header class="connections-header">
+        <button
+            type="button"
+            id="closeConnections"
+            class="connections-back"
+            aria-label="Go back"
+        >
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+        </button>
+
+        <h2 id="connectionsTitle">Following</h2>
+    </header>
+
+    <!-- USER LIST -->
+    <div id="connectionsList" class="connections-list"></div>
+
+    <!-- EMPTY MESSAGE -->
+    <div id="connectionsEmpty" class="connections-empty" hidden>
+        No users to display yet.
+    </div>
+
+</div>
+
+
+
+</header>  
+<!-- =========================================  
+     MAIN CONTENT  
+========================================= -->  
+<main class="me-content">  
+<!-- =====================================  
+     COINS & POINTS  
+====================================== -->  
+
+<section class="wallet-row">  
+
+    <!-- COINS -->  
+
+    <button  
+        class="wallet-card coins-card"  
+        id="coinsCard"  
+        type="button"  
+    >  
+
+        <div class="wallet-information">  
+
+            <span class="wallet-title">  
+                Coins  
+            </span>  
+
+            <span class="wallet-value">  
+
+                <span class="coin-small">  
+                    🪙  
+                </span>  
+
+                0  
+
+                <span class="wallet-arrow">  
+                    ›  
+                </span>  
+
+            </span>  
+
+        </div>  
+
+
+        <div class="wallet-symbol coin-symbol">  
+            ★  
+        </div>  
+
+    </button>  
+
+
+
+    <!-- POINTS -->  
+
+    <button  
+        class="wallet-card points-card"  
+        id="pointsCard"  
+        type="button"  
+    >  
+
+        <div class="wallet-information">  
+
+            <span class="wallet-title">  
+                Points  
+            </span>  
+
+            <span class="wallet-value">  
+
+                <span class="point-small">  
+                    P  
+                </span>  
+
+                0  
+
+                <span class="wallet-arrow">  
+                    ›  
+                </span>  
+
+            </span>  
+
+        </div>  
+
+
+        <div class="wallet-symbol points-symbol">  
+            P  
+        </div>  
+
+    </button>  
+
+</section>  
+
+
+
+<!-- =========================================  
+     FEATURE MENU  
+========================================== -->  
+
+<section class="feature-panel">  
+
+
+    <!-- LEVEL -->  
+
+    <button  
+        class="feature-item"  
+        data-feature="level"  
+        type="button"  
+    >  
+
+        <div class="feature-icon level-icon">  
+
+            <svg viewBox="0 0 24 24">  
+
+                <path  
+                    d="M4 18h16l-2-9-4 4-2-7-2 7-4-4-2 9Z"  
+                ></path>  
+
+                <path d="M6 21h12"></path>  
+
+            </svg>  
+
+        </div>  
+
+        <span>  
+            Level  
+        </span>  
+
+    </button>  
+
+
+
+    <!-- STORE -->  
+
+    <button  
+        class="feature-item"  
+        data-feature="store"  
+        type="button"  
+    >  
+
+        <div class="feature-icon store-icon">  
+
+            <svg viewBox="0 0 24 24">  
+
+                <path d="M4 10h16"></path>  
+
+                <path d="M5 10v10h14V10"></path>  
+
+                <path d="M3 10l2-6h14l2 6"></path>  
+
+                <path d="M8 10v2"></path>  
+
+                <path d="M12 10v2"></path>  
+
+                <path d="M16 10v2"></path>  
+
+            </svg>  
+
+        </div>  
+
+        <span>  
+            Store  
+        </span>  
+
+    </button>  
+
+
+
+    <!-- DRESS -->  
+
+    <button  
+        class="feature-item"  
+        data-feature="dress"  
+        type="button"  
+    >  
+
+        <div class="feature-icon dress-icon">  
+
+            <svg viewBox="0 0 24 24">  
+
+                <path d="M9 4l3 3 3-3"></path>  
+
+                <path  
+                    d="M9 4l-4 4 3 3v9h8v-9l3-3-4-4"  
+                ></path>  
+
+                <path d="M8 12h8"></path>  
+
+            </svg>  
+
+        </div>  
+
+        <span>  
+            Dress  
+        </span>  
+
+    </button>  
+
+
+
+    <!-- HOST CENTER -->  
+
+    <button  
+        class="feature-item"  
+        data-feature="host"  
+        type="button"  
+    >  
+
+        <div class="feature-icon host-icon">  
+
+            <svg viewBox="0 0 24 24">  
+
+                <circle  
+                    cx="12"  
+                    cy="7"  
+                    r="3"  
+                ></circle>  
+
+                <path  
+                    d="M6 20c.7-4 2.7-6 6-6s5.3 2 6 6"  
+                ></path>  
+
+                <path  
+                    d="M19 13l.8 1.8 2 .2-1.5 1.3.4 2-1.7-1-1.7 1 .4-2-1.5-1.3 2-.2L19 13Z"  
+                ></path>  
+
+            </svg>  
+
+        </div>  
+
+        <span>  
+            Host Center  
+        </span>  
+
+    </button>  
+
+
+
+    <!-- RECHARGE -->  
+
+    <button  
+        class="feature-item"  
+        data-feature="recharge"  
+        type="button"  
+    >  
+
+        <div class="feature-icon recharge-icon">  
+
+            <svg viewBox="0 0 24 24">  
+
+                <path  
+                    d="M4 6h15a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"  
+                ></path>  
+
+                <path  
+                    d="M2 8V6a2 2 0 0 1 2-2h13"  
+                ></path>  
+
+                <path d="M16 13h5"></path>  
+
+                <circle  
+                    cx="16"  
+                    cy="13"  
+                    r="1"  
+                ></circle>  
+
+            </svg>  
+
+        </div>  
+
+        <span>  
+            Recharge  
+        </span>  
+
+    </button>  
+
+
+
+    <!-- TASK -->  
+
+    <button  
+        class="feature-item"  
+        data-feature="task"  
+        type="button"  
+    >  
+
+        <div class="feature-icon task-icon">  
+
+            <svg viewBox="0 0 24 24">  
+
+                <rect  
+                    x="5"  
+                    y="4"  
+                    width="14"  
+                    height="17"  
+                    rx="2"  
+                ></rect>  
+
+                <path d="M9 4V3h6v1"></path>  
+
+                <path d="M8 10l2 2 4-4"></path>  
+
+                <path d="M8 16h7"></path>  
+
+            </svg>  
+
+        </div>  
+
+        <span>  
+            Task  
+        </span>  
+
+    </button>  
+
+
+
+    <!-- INVITE FRIENDS -->  
+
+    <button  
+        class="feature-item"  
+        data-feature="invite"  
+        type="button"  
+    >  
+
+        <div class="feature-icon invite-icon">  
+
+            <svg viewBox="0 0 24 24">  
+
+                <circle  
+                    cx="9"  
+                    cy="8"  
+                    r="3"  
+                ></circle>  
+
+                <path  
+                    d="M3 20c.6-4 2.5-6 6-6s5.4 2 6 6"  
+                ></path>  
+
+                <path d="M18 12v7"></path>  
+
+                <path d="M14.5 15.5h7"></path>  
+
+            </svg>  
+
+        </div>  
+
+        <span>  
+            Invite friends  
+        </span>  
+
+    </button>  
+
+
+</section>  
+
+
+
+<!-- =========================================  
+     ACCOUNT MENU  
+========================================== -->  
+
+<section class="account-menu">  
+
+
+    <!-- AGENT CENTER -->  
+
+    <button  
+        class="menu-row"  
+        data-menu="agent"  
+        type="button"  
+    >  
+
+        <span class="menu-left">  
+
+            <span class="menu-icon agent-menu-icon">  
+
+                <svg viewBox="0 0 24 24">  
+
+                    <path d="M5 5h14v14H5z"></path>  
+
+                    <path d="M9 12l2 2 4-4"></path>  
+
+                    <path d="M10 5l2-2 2 2"></path>  
+
+                </svg>  
+
+            </span>  
+
+            <span>  
+                Agent Center  
+            </span>  
+
+        </span>  
+
+        <span class="menu-arrow">  
+            ›  
+        </span>  
+
+    </button>  
+
+
+
+    <!-- SETTINGS -->  
+
+    <button  
+        class="menu-row"  
+        data-menu="settings"  
+        type="button"  
+    >  
+
+        <span class="menu-left">  
+
+            <span class="menu-icon settings-menu-icon">  
+
+                <svg viewBox="0 0 24 24">  
+
+                    <path  
+                        d="M12 8a4 4 0 1 0 0 8  
+                           4 4 0 0 0 0-8Z"  
+                    ></path>  
+
+                    <path  
+                        d="M19 13.5l2-1.5-2-1.5  
+                           -.5-2.2  
+                           -2.3-.8  
+                           -1.5-1.7  
+                           -2.4.7  
+                           -2.4-.7  
+                           -1.5 1.7  
+                           -2.3.8  
+                           -.5 2.2  
+                           -2 1.5  
+                           2 1.5  
+                           .5 2.2  
+                           2.3.8  
+                           1.5 1.7  
+                           2.4-.7  
+                           2.4.7  
+                           1.5-1.7  
+                           2.3-.8Z"  
+                    ></path>  
+
+                </svg>  
+
+            </span>  
+
+            <span>  
+                Settings  
+            </span>  
+
+        </span>  
+
+        <span class="menu-arrow">  
+            ›  
+        </span>  
+
+    </button>  
+
+
+
+    <!-- SUPPORT -->  
+
+    <button  
+        class="menu-row"  
+        data-menu="support"  
+        type="button"  
+    >  
+
+        <span class="menu-left">  
+
+            <span class="menu-icon support-menu-icon">  
+
+                <svg viewBox="0 0 24 24">  
+
+                    <path  
+                        d="M5 13v-2a7 7 0 0 1 14 0v2"  
+                    ></path>  
+
+                    <path d="M5 13H3v4h4v-4"></path>  
+
+                    <path d="M19 13h2v4h-4v-4"></path>  
+
+                    <path d="M17 18c0 2-2 3-4 3h-1"></path>  
+
+                </svg>  
+
+            </span>  
+
+            <span>  
+                Support  
+            </span>  
+
+        </span>  
+
+        <span class="menu-arrow">  
+            ›  
+        </span>  
+
+    </button> 
+    
+    <button
+    class="menu-row"
+    id="logoutButton"
+    type="button"
+>
+
+    <span class="menu-left">
+
+        <span class="menu-icon">
+
+            <svg viewBox="0 0 24 24">
+
+                <path
+                    d="M10 17l5-5-5-5"
+                ></path>
+
+                <path
+                    d="M15 12H3"
+                ></path>
+
+                <path
+                    d="M21 3v18"
+                ></path>
+
+            </svg>
+
+        </span>
+
+        <span>
+            Log Out
+        </span>
+
+    </span>
+
+    <span class="menu-arrow">
+        ›
+    </span>
+
+</button>
+
+</section>
+
+</main>
+
+
+
+
+<!-- HOST CENTER FULL-SCREEN OVERLAY -->
+<section id="hostCenterOverlay" class="host-center-overlay" aria-hidden="true">
+
+    <header class="host-center-header">
+        <button
+            type="button"
+            id="closeHostCenter"
+            class="host-center-back"
+            aria-label="Go back"
+        >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+        </button>
+
+        <h2>Host Center</h2>
+    </header>
+
+    
+<!-- AGENCY CODE / REQUEST SCREEN -->
+<div id="hostAgencyRequestView" class="host-center-request-view">
+
+    <div class="host-center-content">
+        <label for="agencyCodeInput" class="agency-code-title">
+            Agency Code
+        </label>
+
+        <p id="hostRequestMessage" class="agency-code-description">
+            Enter the agency code provided by your agency to submit a join request.
+        </p>
+
+        <input
+            type="text"
+            id="agencyCodeInput"
+            class="agency-code-input"
+            placeholder="Enter agency code"
+            autocomplete="off"
+            spellcheck="false"
+        >
+    </div>
+
+    <div class="host-center-bottom">
+        <button
+            type="button"
+            id="submitAgencyCode"
+            class="agency-submit-button"
+        >
+            Submit
+        </button>
+    </div>
+
+</div>
+
+<!-- ACCEPTED HOST DASHBOARD -->
+<div id="hostDashboardView" class="host-dashboard-view" hidden>
+
+    <div class="host-dashboard-scroll">
+
+        <!-- HOST PROFILE HEADER -->
+        <section class="host-dashboard-profile">
+
+            <div class="host-dashboard-profile-row">
+                <img
+                    id="hostDashboardAvatar"
+                    class="host-dashboard-avatar"
+                    src=""
+                    alt="Host profile picture"
+                    hidden
+                >
+
+                <div
+                    id="hostDashboardAvatarLetter"
+                    class="host-dashboard-avatar-letter"
+                >H</div>
+
+                <div class="host-dashboard-identity">
+                    <h3 id="hostDashboardUsername">Loading...</h3>
+
+                    <button
+                        type="button"
+                        id="hostDashboardCopyId"
+                        class="host-dashboard-copy-id"
+                    >
+                        ID: <span id="hostDashboardLarckId">-------</span>
+                        <span aria-hidden="true">▢</span>
+                    </button>
+
+                    <p id="hostDashboardDate"></p>
+                </div>
+            </div>
+
+            <div class="host-dashboard-stats">
+                <div>
+                    <span>Coins</span>
+                    <strong id="hostDashboardCoins">0</strong>
+                </div>
+
+                <div>
+                    <span>This week Points</span>
+                    <strong id="hostDashboardWeeklyPoints">0</strong>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- AGENCY DETAILS -->
+        <section class="host-dashboard-agency">
+            <div class="host-dashboard-section-title">
+                <h3>My Agency</h3>
+                <span class="host-dashboard-accepted">Accepted</span>
+            </div>
+
+            <div class="host-dashboard-agency-row">
+                <div class="host-dashboard-agency-icon">A</div>
+
+                <div class="host-dashboard-agency-info">
+                    <strong id="hostDashboardAgencyName">Loading...</strong>
+                    <span>
+                        Agency ID:
+                        <span id="hostDashboardAgencyId">-----</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- INCOME -->
+        <section class="host-dashboard-income">
+
+            <h3>Host Income</h3>
+
+            <div class="host-dashboard-income-tabs">
+                <button
+                    type="button"
+                    class="host-income-tab active"
+                    data-host-income-tab="payments"
+                >Payments</button>
+
+                <button
+                    type="button"
+                    class="host-income-tab"
+                    data-host-income-tab="daily"
+                >Daily</button>
+
+                <button
+                    type="button"
+                    class="host-income-tab"
+                    data-host-income-tab="audio"
+                >Audio calls</button>
+            </div>
+
+            <div class="host-dashboard-income-empty">
+                <div class="host-dashboard-wallet-icon">◇</div>
+                <strong id="hostIncomeEmptyTitle">No income this month</strong>
+                <p id="hostIncomeEmptyDescription">
+                    Your income records will appear here when available.
+                </p>
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
+</section>
+
+
+
+
+<!-- =====================================
+     AGENCY INVITATIONS - FULL SCREEN OVERLAY
+===================================== -->
+<section
+    id="agencyInvitationsOverlay"
+    class="agency-invitations-overlay"
+    aria-hidden="true"
+>
+    <header class="agency-invitations-header">
+        <button
+            type="button"
+            id="closeAgencyInvitations"
+            class="agency-invitations-back"
+            aria-label="Go back"
+        >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+        </button>
+
+        <h2>Agency Invitations</h2>
+    </header>
+
+    <main class="agency-invitations-content">
+        <div
+            id="agencyInvitationsEmpty"
+            class="agency-invitations-empty"
+        >
+            <div class="agency-empty-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="10" cy="7" r="4"></circle>
+                    <path d="M20 8v6"></path>
+                    <path d="M17 11h6"></path>
+                </svg>
+            </div>
+
+            <p>No invitations right now.</p>
+        </div>
+    </main>
+</section>
+
+
+
+
+<!-- AGENCY CENTER OVERLAY -->
+<section
+    id="agencyCenterOverlay"
+    class="agency-center-overlay"
+    aria-hidden="true"
+>
+    <header class="agency-center-header">
+        <button
+            type="button"
+            id="closeAgencyCenter"
+            aria-label="Go back"
+        >&#8592;</button>
+
+        <h2>Agency Center</h2>
+
+        <span class="agency-header-spacer"></span>
+    </header>
+
+    <main class="agency-center-content">
+
+        <!-- WELCOME CARD -->
+        <section class="agency-welcome-card">
+            <div class="agency-welcome-top">
+
+                <div
+                    id="agencyProfileAvatar"
+                    class="agency-profile-avatar"
+                >L</div>
+
+                <div class="agency-welcome-details">
+                    <p>Welcome to Agency</p>
+                    <h3 id="agencyUsername">Loading...</h3>
+
+                    <div class="agency-id-line">
+                        <span id="agencyIdText">ID: -----</span>
+                        <span class="agency-active-badge">Active</span>
+                    </div>
+                </div>
+
+                <div class="agency-points">
+                    <strong id="agencyPoints">0</strong>
+                    <span>Points</span>
+                </div>
+            </div>
+
+            <div class="agency-quick-actions">
+                <button type="button" data-agency-action="add-host">
+                    <span>＋</span>
+                    Add host
+                </button>
+
+                <button type="button" data-agency-action="requests">
+                    <span>▤</span>
+                    Requests
+                </button>
+
+                <button type="button" data-agency-action="history">
+                    <span>◷</span>
+                    History
+                </button>
+
+                <button type="button" data-agency-action="payouts">
+                    <span>₦</span>
+                    Payouts
+                </button>
+            </div>
+        </section>
+
+        <!-- STATISTICS -->
+        <section class="agency-stats-grid">
+            <article class="agency-stat-card">
+                <span>Total hosts</span>
+                <strong id="agencyTotalHosts">0</strong>
+            </article>
+
+            <article class="agency-stat-card">
+                <span>Current host coins</span>
+                <strong id="agencyCurrentHostCoins">0</strong>
+            </article>
+
+            <article class="agency-stat-card">
+                <span>Current coins</span>
+                <strong id="agencyCurrentCoins">0</strong>
+            </article>
+
+            <article class="agency-stat-card">
+                <span>Total coins</span>
+                <strong id="agencyTotalCoins">0</strong>
+            </article>
+
+            <article class="agency-stat-card">
+                <span>Withdrawn coins</span>
+                <strong id="agencyWithdrawnCoins">0</strong>
+            </article>
+
+            <article class="agency-stat-card">
+                <span>Commission rate</span>
+                <strong>13%</strong>
+            </article>
+        </section>
+
+        <!-- TOP HOSTS -->
+        <section class="agency-section">
+            <div class="agency-section-heading">
+                <div>
+                    <h3>Top hosts</h3>
+                    <p id="agencyTopHostsSubtitle">
+                        0 hosts · host income
+                    </p>
+                </div>
+
+                <button type="button" data-agency-action="all-hosts">
+                    View all ›
+                </button>
+            </div>
+
+            <div id="agencyTopHostsList">
+                <p class="agency-empty-text">No hosts yet.</p>
+            </div>
+        </section>
+
+        <!-- AGENCY PROFILE -->
+        <section class="agency-section">
+            <h3>Agency profile</h3>
+
+            <p class="agency-description">
+                Manage your agency, hosts and agency information.
+            </p>
+
+            <div class="agency-profile-details">
+                <div>
+                    <span>Name</span>
+                    <strong id="agencyDetailName">Loading...</strong>
+                </div>
+
+                <div>
+                    <span>Agency ID</span>
+                    <strong id="agencyDetailId">-----</strong>
+                </div>
+
+                <div>
+                    <span>Mobile</span>
+                    <strong id="agencyDetailMobile">Not added</strong>
+                </div>
+
+                <div>
+                    <span>Status</span>
+                    <strong class="agency-status-text">Active</strong>
+                </div>
+
+                <div>
+                    <span>Created</span>
+                    <strong id="agencyCreatedDate">Loading...</strong>
+                </div>
+
+                <div>
+                    <span>Points</span>
+                    <strong id="agencyDetailPoints">0</strong>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FIXED BOTTOM NAVIGATION -->
+    <nav class="agency-bottom-nav">
+        <button type="button" data-agency-nav="home">
+            <span>⌂</span>
+            Home
+        </button>
+
+        <button type="button" data-agency-nav="hosts">
+            <span>♙</span>
+            Hosts
+        </button>
+
+        <button
+            type="button"
+            class="active"
+            data-agency-nav="add-sub-agent"
+        >
+            <span>＋</span>
+            Add sub agent
+        </button>
+
+        <button type="button" data-agency-nav="requests">
+            <span>▤</span>
+            Requests
+        </button>
+
+        <button type="button" data-agency-nav="earnings">
+            <span>＄</span>
+            Earnings
+        </button>
+    </nav>
+
+   
+    
+<!-- ADD AGENCY PAGE -->
+<section
+    id="addAgencyPage"
+    class="add-agency-page"
+    aria-hidden="true"
+>
+    <header class="add-agency-header">
+        <button
+            type="button"
+            id="closeAddAgency"
+            aria-label="Go back"
+        >&#8592;</button>
+
+        <h2>Add Agency</h2>
+
+        <span class="add-agency-header-spacer"></span>
+    </header>
+
+    <main class="add-agency-content">
+
+        <!-- PERSON ID -->
+        <label class="add-agency-label" for="addAgencyPersonId">
+            Person ID
+        </label>
+
+        <div class="add-agency-search-row">
+            <input
+                id="addAgencyPersonId"
+                type="text"
+                inputmode="numeric"
+                placeholder="Enter user ID"
+                autocomplete="off"
+            >
+
+            <button
+                type="button"
+                id="searchAgencyPerson"
+                aria-label="Search user"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    width="22"
+                    height="22"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                >
+                    <circle cx="10.8" cy="10.8" r="6.8"></circle>
+                    <path d="m16 16 5 5"></path>
+                </svg>
+            </button>
+        </div>
+
+        <p id="addAgencySearchMessage" class="add-agency-message"></p>
+
+        <!-- AGENCY DETAILS -->
+        <form id="addAgencyForm">
+
+            <div class="add-agency-form-card">
+
+                <label class="add-agency-label" for="addAgencyName">
+                    Agency name
+                </label>
+
+                <div class="add-agency-input-row">
+                    <span class="add-agency-field-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3 21h18M5 21V5l7-3 7 3v16M9 9h1m4 0h1m-6 4h1m4 0h1m-5 8v-4h4v4"
+                                fill="none" stroke="currentColor"
+                                stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+
+                    <input
+                        id="addAgencyName"
+                        type="text"
+                        placeholder="Agency name"
+                        maxlength="60"
+                        required
+                    >
+                </div>
+
+                <label class="add-agency-label" for="addAgencyPersonName">
+                    Name (optional)
+                </label>
+
+                <div class="add-agency-input-row">
+                    <span class="add-agency-field-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="8" r="4"
+                                fill="none" stroke="currentColor"
+                                stroke-width="1.8"/>
+                            <path d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7"
+                                fill="none" stroke="currentColor"
+                                stroke-width="1.8" stroke-linecap="round"/>
+                        </svg>
+                    </span>
+
+                    <input
+                        id="addAgencyPersonName"
+                        type="text"
+                        placeholder="Uses profile name if empty"
+                        maxlength="80"
+                    >
+                </div>
+
+                <label class="add-agency-label" for="addAgencyWhatsApp">
+                    WhatsApp number
+                </label>
+
+                <div class="add-agency-input-row">
+                    <span class="add-agency-field-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"
+                                fill="none" stroke="currentColor"
+                                stroke-width="1.8" stroke-linejoin="round"/>
+                            <path d="M9 8.5c.5 2 2 3.5 4.5 4.5l1-1.2 2 1c-.2 1.5-1.2 2.2-2.7 2-3.5-.6-6.8-3.9-7.4-7.4-.2-1.5.5-2.5 2-2.7l1 2Z"
+                                fill="none" stroke="currentColor"
+                                stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+
+                    <input
+                        id="addAgencyWhatsApp"
+                        type="tel"
+                        inputmode="tel"
+                        placeholder="3001234567"
+                        maxlength="20"
+                    >
+                </div>
+
+            </div>
+
+            <button type="submit" class="add-agency-submit">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m5 12 4 4L19 6"
+                        fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                </svg>
+                Add Agency
+            </button>
+
+        </form>
+    </main>
+</section>
+
+
+
+
+<!-- ADD HOST BOTTOM SHEET -->
+<div
+    id="addHostBackdrop"
+    class="add-host-backdrop"
+    aria-hidden="true"
+>
+    <section
+        id="addHostSheet"
+        class="add-host-sheet"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="addHostTitle"
+    >
+        <div class="add-host-heading">
+            <h2 id="addHostTitle">Add host</h2>
+
+            <button
+                type="button"
+                id="closeAddHost"
+                class="add-host-close"
+                aria-label="Close Add host"
+            >
+                &times;
+            </button>
+        </div>
+
+        <p class="add-host-description">
+            Search a user ID, pick the user, and send them a host request.
+        </p>
+
+        <form id="addHostForm">
+            <label for="addHostUserId">User ID</label>
+
+            <div class="add-host-input-wrap">
+                <span class="add-host-hash" aria-hidden="true">#</span>
+
+                <input
+                    type="text"
+                    id="addHostUserId"
+                    placeholder="Search & select user ID"
+                    autocomplete="off"
+                    required
+                >
+            </div>
+
+            <p id="addHostMessage" class="add-host-message"></p>
+
+            <button
+                type="submit"
+                id="sendHostInvite"
+                class="add-host-submit"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <path d="m22 2-7 20-4-9-9-4Z"></path>
+                    <path d="M22 2 11 13"></path>
+                </svg>
+
+                <span>Send invite</span>
+            </button>
+        </form>
+    </section>
+</div>
+
+
+
+
+<!-- APPLICATIONS PAGE -->
+<section
+    id="agencyApplicationsPage"
+    class="agency-applications-page"
+    aria-hidden="true"
+>
+    <header class="applications-header">
+        <button
+            type="button"
+            id="closeAgencyApplications"
+            class="applications-back"
+            aria-label="Back to Agency Center"
+        >&#8592;</button>
+
+        <h2>Applications</h2>
+
+        <span class="applications-header-spacer"></span>
+    </header>
+
+    <div class="applications-tabs" role="tablist" aria-label="Host applications">
+        <button
+            type="button"
+            class="applications-tab active"
+            data-application-tab="pending"
+            role="tab"
+            aria-selected="true"
+        >
+            Pending
+            <span id="pendingApplicationsBadge" class="applications-badge">0</span>
+        </button>
+
+        <button
+            type="button"
+            class="applications-tab"
+            data-application-tab="accepted"
+            role="tab"
+            aria-selected="false"
+        >Accepted</button>
+
+        <button
+            type="button"
+            class="applications-tab"
+            data-application-tab="declined"
+            role="tab"
+            aria-selected="false"
+        >Declined</button>
+    </div>
+
+    <main class="applications-content">
+        <div
+            id="pendingApplicationsPanel"
+            class="applications-panel active"
+            role="tabpanel"
+        >
+            <div class="applications-empty-card">
+                <div class="applications-empty-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="30" height="30"
+                        fill="none" stroke="currentColor" stroke-width="1.7"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="5" y="4" width="14" height="17" rx="2"></rect>
+                        <path d="M9 4.5V3h6v1.5"></path>
+                        <path d="M8.5 10h7M8.5 14h7M8.5 18h4"></path>
+                    </svg>
+                </div>
+                <h3>No pending requests</h3>
+                <p>New host applications will show up here</p>
+            </div>
+        </div>
+
+        <div
+            id="acceptedApplicationsPanel"
+            class="applications-panel"
+            role="tabpanel"
+            hidden
+        >
+            <div class="applications-empty-card">
+                <div class="applications-empty-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="30" height="30"
+                        fill="none" stroke="currentColor" stroke-width="1.7"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="5" y="4" width="14" height="17" rx="2"></rect>
+                        <path d="M9 4.5V3h6v1.5"></path>
+                        <path d="m8.5 13 2.5 2.5 4.5-5"></path>
+                    </svg>
+                </div>
+                <h3>No accepted requests</h3>
+                <p>Accepted host applications will show up here</p>
+            </div>
+        </div>
+
+        <div
+            id="declinedApplicationsPanel"
+            class="applications-panel"
+            role="tabpanel"
+            hidden
+        >
+            <div class="applications-empty-card">
+                <div class="applications-empty-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="30" height="30"
+                        fill="none" stroke="currentColor" stroke-width="1.7"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="5" y="4" width="14" height="17" rx="2"></rect>
+                        <path d="M9 4.5V3h6v1.5"></path>
+                        <path d="m9 11 6 6m0-6-6 6"></path>
+                    </svg>
+                </div>
+                <h3>No declined requests</h3>
+                <p>Declined host applications will show up here</p>
+            </div>
+        </div>
+    </main>
+
+    <nav class="applications-bottom-nav" aria-label="Agency navigation">
+        <button type="button" data-app-nav="home">
+            <span class="app-nav-icon">⌂</span>
+            <span>Home</span>
+        </button>
+
+        <button type="button" data-app-nav="hosts">
+            <span class="app-nav-icon">♙</span>
+            <span>Hosts</span>
+        </button>
+
+        <button type="button" data-app-nav="add-sub-agent">
+            <span class="app-nav-icon">＋</span>
+            <span>Add sub agent</span>
+        </button>
+
+        <button type="button" data-app-nav="requests" class="active"
+            aria-current="page">
+            <span class="app-nav-icon">▤</span>
+            <span>Requests</span>
+        </button>
+
+        <button type="button" data-app-nav="earnings">
+            <span class="app-nav-icon">＄</span>
+            <span>Earnings</span>
+        </button>
+    </nav>
+</section>
+
+
+
+
+<!-- LARCK Agency History Page -->
+<section id="agencyHistoryPage" class="agency-history-page" aria-hidden="true">
+
+  <header class="history-header">
+    <button type="button" id="closeAgencyHistory"
+      class="history-back" aria-label="Back to Agency Center">
+      &#8592;
+    </button>
+    <h2>History</h2>
+    <span class="history-header-spacer"></span>
+  </header>
+
+  <div class="history-tabs" role="tablist" aria-label="History type">
+    <button type="button" class="history-tab active"
+      data-history-tab="gift" role="tab" aria-selected="true">
+      Gift
+    </button>
+    <button type="button" class="history-tab"
+      data-history-tab="calls" role="tab" aria-selected="false">
+      Calls
+    </button>
+    <button type="button" class="history-tab"
+      data-history-tab="audio-live" role="tab" aria-selected="false">
+      Audio Live
+    </button>
+  </div>
+
+  <main class="history-content">
+
+    <button type="button" id="historyDateRange" class="history-date-pill">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+        <path d="M16 3v4M8 3v4M3 10h18"></path>
+      </svg>
+      <span>01 Oct – 31 Oct 2026</span>
+      <span class="history-date-chevron">&#9662;</span>
+    </button>
+
+    <section class="history-record-card">
+      <div class="history-card-heading">
+        <h3>Host history</h3>
+        <p id="historyRecordSummary">0 records · 01 Oct – 31 Oct 2026</p>
+      </div>
+
+      <div class="history-empty-state" id="giftHistoryPanel"
+        role="tabpanel">
+        <div class="history-empty-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 12v9H4v-9M2 7h20v5H2z"></path>
+            <path d="M12 7v14M12 7H7.5a2.5 2.5 0 1 1 2.5-2.5C10 6 12 7 12 7ZM12 7h4.5A2.5 2.5 0 1 0 14 4.5C14 6 12 7 12 7Z"></path>
+          </svg>
+        </div>
+        <h4>No gift history</h4>
+        <p>Try another date range</p>
+      </div>
+
+      <div class="history-empty-state" id="callsHistoryPanel"
+        role="tabpanel" hidden>
+        <div class="history-empty-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"></path>
+            <path d="M9 7h6M9 11h6M9 15h3"></path>
+          </svg>
+        </div>
+        <h4>No call history</h4>
+        <p>Try another date range</p>
+      </div>
+
+      <div class="history-empty-state" id="audioLiveHistoryPanel"
+        role="tabpanel" hidden>
+        <div class="history-empty-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 3a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Z"></path>
+            <path d="M5 10v1a7 7 0 0 0 14 0v-1M12 18v3M8 21h8"></path>
+          </svg>
+        </div>
+        <h4>No audio live history</h4>
+        <p>Try another date range</p>
+      </div>
+    </section>
+  </main>
+
+  <nav class="history-bottom-nav" aria-label="Agency navigation">
+    <button type="button" data-history-nav="home">
+      <span class="history-nav-icon">⌂</span><span>Home</span>
+    </button>
+    <button type="button" data-history-nav="hosts">
+      <span class="history-nav-icon">♙</span><span>Hosts</span>
+    </button>
+    <button type="button" data-history-nav="add-sub-agent">
+      <span class="history-nav-icon">＋</span><span>Add sub agent</span>
+    </button>
+    <button type="button" data-history-nav="requests">
+      <span class="history-nav-icon">▤</span><span>Requests</span>
+    </button>
+    <button type="button" data-history-nav="earnings">
+      <span class="history-nav-icon">＄</span><span>Earnings</span>
+    </button>
+  </nav>
+
+</section>
+
+
+
+
+<!-- LARCK Agency Payouts Page -->
+<section id="agencyPayoutsPage" class="agency-payouts-page" aria-hidden="true">
+
+  <header class="payouts-header">
+    <button type="button" id="closeAgencyPayouts"
+      class="payouts-back" aria-label="Back to Agency Center">
+      &#8592;
+    </button>
+    <h2>Payouts</h2>
+    <span class="payouts-header-spacer"></span>
+  </header>
+
+  <main class="payouts-content">
+
+    <div class="payout-status-cards">
+      <div class="payout-status-card">
+        <span class="payout-status-icon pending-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M12 7v5l3 2"></path>
+          </svg>
+        </span>
+        <span class="payout-status-label">Pending</span>
+        <strong id="pendingPayoutCount">0</strong>
+      </div>
+
+      <div class="payout-status-card">
+        <span class="payout-status-icon paid-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="m8 12 2.5 2.5L16 9"></path>
+          </svg>
+        </span>
+        <span class="payout-status-label">Paid</span>
+        <strong id="paidPayoutCount">0</strong>
+      </div>
+
+      <div class="payout-status-card">
+        <span class="payout-status-icon requests-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <rect x="5" y="3" width="14" height="18" rx="2"></rect>
+            <path d="M9 8h6M9 12h6M9 16h4"></path>
+          </svg>
+        </span>
+        <span class="payout-status-label">Requests</span>
+        <strong id="totalPayoutRequests">0</strong>
+      </div>
+    </div>
+
+    <section class="payout-requests-section">
+      <h3>Payout requests</h3>
+      <p class="payouts-subtitle">Commission you asked to redeem</p>
+
+      <div class="payout-action-buttons">
+        <button type="button" id="weeklyIncomeButton"
+          class="payout-action-button weekly-income-button">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+            <path d="M16 3v4M8 3v4M3 10h18M8 14h3"></path>
+          </svg>
+          Weekly income
+        </button>
+
+        <button type="button" id="requestPayoutButton"
+          class="payout-action-button request-payout-button active">
+          <span aria-hidden="true">＋</span>
+          Request payout
+        </button>
+      </div>
+    </section>
+
+    <section class="payout-empty-card">
+
+      <div id="payoutRequestsPanel" class="payout-empty-panel"
+        role="tabpanel">
+        <div class="payout-empty-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 8.5 12 3l9 5.5"></path>
+            <path d="M4 9h16v11H4z"></path>
+            <path d="M9 14h6M9 17h4"></path>
+          </svg>
+        </div>
+        <h4>No payout requests yet</h4>
+        <p>Requests you make show up here</p>
+      </div>
+
+      <div id="weeklyIncomePanel" class="payout-empty-panel"
+        role="tabpanel" hidden>
+        <div class="payout-empty-icon weekly-empty-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="17" rx="2"></rect>
+            <path d="M8 2v4M16 2v4M3 9h18"></path>
+            <path d="m7 16 3-3 3 2 4-4"></path>
+          </svg>
+        </div>
+        <h4>No weekly income yet</h4>
+        <p>Your weekly commission will show up here</p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <nav class="payouts-bottom-nav" aria-label="Agency navigation">
+    <button type="button" data-payout-nav="home">
+      <span class="payout-nav-icon">⌂</span>
+      <span>Home</span>
+    </button>
+    <button type="button" data-payout-nav="hosts">
+      <span class="payout-nav-icon">♙</span>
+      <span>Hosts</span>
+    </button>
+    <button type="button" data-payout-nav="add-sub-agent">
+      <span class="payout-nav-icon">＋</span>
+      <span>Add sub agent</span>
+    </button>
+    <button type="button" data-payout-nav="requests">
+      <span class="payout-nav-icon">▤</span>
+      <span>Requests</span>
+    </button>
+    <button type="button" data-payout-nav="earnings" class="active"
+      aria-current="page">
+      <span class="payout-nav-icon">＄</span>
+      <span>Earnings</span>
+    </button>
+  </nav>
+
+</section>
+
+
+
+
+<!-- LARCK Agency Commission Page -->
+<section id="agencyCommissionPage" class="agency-commission-page" aria-hidden="true">
+
+  <header class="commission-header">
+    <button type="button" id="closeAgencyCommission"
+      class="commission-back" aria-label="Back to Agency Center">
+      &#8592;
+    </button>
+    <h2>Commission</h2>
+    <span class="commission-header-spacer"></span>
+  </header>
+
+  <main class="commission-content">
+
+    <section class="commission-report">
+      <h3>Commission report</h3>
+      <p id="commissionDateRange">01 Oct 2026 → 14 Oct 2026</p>
+    </section>
+
+    <div class="commission-periods" role="group" aria-label="Commission period">
+      <button type="button" class="commission-period"
+        data-commission-period="week" aria-pressed="false">
+        This week
+      </button>
+
+      <button type="button" class="commission-period active"
+        data-commission-period="month" aria-pressed="true">
+        This month
+      </button>
+
+      <button type="button" class="commission-period"
+        data-commission-period="year" aria-pressed="false">
+        This year
+      </button>
+
+      <button type="button" class="commission-period"
+        data-commission-period="custom" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+          <path d="M16 3v4M8 3v4M3 10h18"></path>
+        </svg>
+        Custom
+      </button>
+    </div>
+
+    <section class="commission-stats-grid">
+
+      <article class="commission-stat-card">
+        <div class="commission-stat-top">
+          <span class="commission-stat-icon commission-icon-pink">✦</span>
+          <span class="commission-stat-label">Your commission</span>
+        </div>
+        <strong class="commission-stat-value">0</strong>
+        <p>0 gifts</p>
+      </article>
+
+      <article class="commission-stat-card">
+        <div class="commission-stat-top">
+          <span class="commission-stat-icon commission-icon-purple">↗</span>
+          <span class="commission-stat-label">Hosts’ total income</span>
+        </div>
+        <strong class="commission-stat-value">0</strong>
+        <p>points your hosts earned</p>
+      </article>
+
+      <article class="commission-stat-card">
+        <div class="commission-stat-top">
+          <span class="commission-stat-icon commission-icon-green">♙</span>
+          <span class="commission-stat-label">Active hosts</span>
+        </div>
+        <strong class="commission-stat-value">0</strong>
+        <p>earned in this range</p>
+      </article>
+
+      <article class="commission-stat-card">
+        <div class="commission-stat-top">
+          <span class="commission-stat-icon commission-icon-gold">★</span>
+          <span class="commission-stat-label">Top performer</span>
+        </div>
+        <strong class="commission-stat-value commission-golden">Golden</strong>
+        <p>0 points commission</p>
+      </article>
+
+    </section>
+
+    <section class="commission-host-section">
+      <div class="commission-host-heading">
+        <h3>Host performance</h3>
+        <p>Best performers first</p>
+      </div>
+
+      <div id="commissionHostList" class="commission-host-list">
+        <div class="commission-no-hosts">
+          <div class="commission-no-hosts-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="9" cy="8" r="3"></circle>
+              <path d="M3 20v-2a6 6 0 0 1 12 0v2"></path>
+              <path d="M16 5a3 3 0 0 1 0 6M18 14a5 5 0 0 1 3 4v2"></path>
+            </svg>
+          </div>
+          <h4>No host performance yet</h4>
+          <p>Host earnings will appear here when commission data is available.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <nav class="commission-bottom-nav" aria-label="Agency navigation">
+    <button type="button" data-commission-nav="home">
+      <span class="commission-nav-icon">⌂</span>
+      <span>Home</span>
+    </button>
+    <button type="button" data-commission-nav="hosts">
+      <span class="commission-nav-icon">♙</span>
+      <span>Hosts</span>
+    </button>
+    <button type="button" data-commission-nav="add-sub-agent">
+      <span class="commission-nav-icon">＋</span>
+      <span>Add sub agent</span>
+    </button>
+    <button type="button" data-commission-nav="requests">
+      <span class="commission-nav-icon">▤</span>
+      <span>Requests</span>
+    </button>
+    <button type="button" data-commission-nav="earnings"
+      class="active" aria-current="page">
+      <span class="commission-nav-icon">＄</span>
+      <span>Earnings</span>
+    </button>
+  </nav>
+
+</section>
+
+
+
+
+<!-- HOSTS PAGE -->
+<section id="agencyHostsPage" class="agency-hosts-page" hidden>
+
+  <header class="agency-hosts-header">
+    <button type="button" class="agency-hosts-back"
+      onclick="closeAgencyHostsPage()" aria-label="Go back">
+      &#8592;
+    </button>
+    <h2>Hosts</h2>
+    <span class="agency-hosts-header-space"></span>
+  </header>
+
+  <main class="agency-hosts-content">
+
+    <!-- Statistics -->
+    <div class="agency-hosts-stats">
+      <div class="agency-host-stat">
+        <span>Total hosts</span>
+        <strong id="totalHostsCount">0</strong>
+      </div>
+
+      <div class="agency-host-stat">
+        <span>Active</span>
+        <strong id="activeHostsCount">0</strong>
+      </div>
+
+      <div class="agency-host-stat">
+        <span>Host income</span>
+        <strong id="totalHostsIncome">0</strong>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div class="agency-hosts-search">
+      <span aria-hidden="true">&#9906;</span>
+      <input
+        type="search"
+        id="agencyHostsSearch"
+        placeholder="Search by name or ID"
+        autocomplete="off"
+      >
+    </div>
+
+    <!-- Filters -->
+    <div class="agency-hosts-filters" role="tablist"
+      aria-label="Filter hosts">
+      <button type="button" class="active"
+        data-host-filter="all" role="tab" aria-selected="true">
+        All
+      </button>
+
+      <button type="button"
+        data-host-filter="active" role="tab" aria-selected="false">
+        Active
+      </button>
+
+      <button type="button"
+        data-host-filter="blocked" role="tab" aria-selected="false">
+        Blocked
+      </button>
+    </div>
+
+    <!-- Host list -->
+    <div id="agencyHostsList" class="agency-hosts-list">
+      <div class="agency-hosts-empty">
+        <div class="agency-hosts-empty-icon">&#9825;</div>
+        <strong>No host yet</strong>
+        <p>Your hosts will appear here when you add them.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Hosts page bottom navigation -->
+  <nav class="agency-hosts-bottom-nav"
+    aria-label="Agency navigation">
+
+    <button type="button" data-host-nav="home">
+      <span>&#8962;</span>
+      <small>Home</small>
+    </button>
+
+    <button type="button" data-host-nav="hosts"
+      class="active" aria-current="page">
+      <span>&#9825;</span>
+      <small>Hosts</small>
+    </button>
+
+    <button type="button" data-host-nav="add-sub-agent">
+      <span>+</span>
+      <small>Add sub agent</small>
+    </button>
+
+    <button type="button" data-host-nav="requests">
+      <span>&#9776;</span>
+      <small>Requests</small>
+    </button>
+
+    <button type="button" data-host-nav="earnings">
+      <span>&#9733;</span>
+      <small>Earnings</small>
+    </button>
+
+  </nav>
+</section>
+
+
+</section>
+
+
+
+
+<!-- =====================================
+     YOUR LEVEL - FULL SCREEN OVERLAY
+====================================== -->
+<section id="levelOverlay" class="level-overlay" aria-hidden="true">
+
+    <!-- FIXED HEADER -->
+    <header class="level-header">
+        <button id="closeLevelOverlay" class="level-back"
+                type="button" aria-label="Go back">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+        </button>
+
+        <h2>Your Level</h2>
+
+        <button id="levelInfoButton" class="level-info"
+                type="button" aria-label="Level information">i</button>
+    </header>
+
+    <!-- FIXED SUMMARY CARDS -->
+    <section class="level-summary">
+
+        <article class="level-summary-card sending-summary">
+            <div class="level-summary-top">
+                <span class="summary-badge sending-badge">◆</span>
+                <span>Sending · Lv 0</span>
+            </div>
+            <strong class="summary-level">Lv.0</strong>
+            <div class="level-progress">
+                <span style="width: 0%"></span>
+            </div>
+            <p>You've spent <strong>0 Coins</strong></p>
+        </article>
+
+        <article class="level-summary-card receiving-summary">
+            <div class="level-summary-top">
+                <span class="summary-badge receiving-badge">▲</span>
+                <span>Receiving · HOST LV</span>
+            </div>
+            <strong class="summary-level">Lv.0</strong>
+            <div class="level-progress">
+                <span style="width: 0%"></span>
+            </div>
+            <p>You've earned <strong>0 Points</strong></p>
+        </article>
+
+    </section>
+
+    <!-- FIXED TAB SWITCHER -->
+    <div class="level-tabs">
+        <button class="level-tab active" id="sendingTab"
+                type="button" aria-selected="true">
+            Sending
+        </button>
+        <button class="level-tab" id="receivingTab"
+                type="button" aria-selected="false">
+            Receiving
+        </button>
+    </div>
+
+    <!-- ONLY THIS SECTION SCROLLS -->
+    <div id="levelGrid" class="level-grid-scroll">
+        <div id="levelCards" class="level-grid"></div>
+    </div>
+
+</section>
+
+
+
+
+<!-- =========================================  
+     BOTTOM NAVIGATION  
+========================================= -->  
+<nav class="bottom-navigation">  <!-- HOME -->  
+
+<button  
+    class="bottom-nav-item"  
+    data-page="home"  
+    type="button"  
+>  
+
+    <span class="bottom-icon">  
+
+        <svg viewBox="0 0 24 24">  
+
+            <path d="M3 11l9-8 9 8"></path>  
+
+            <path d="M5 10v11h14V10"></path>  
+
+            <path d="M9 21v-6h6v6"></path>  
+
+        </svg>  
+
+    </span>  
+
+    <span>  
+        Home  
+    </span>  
+
+</button>  
+
+
+
+<!-- PARTY -->  
+
+<button  
+    class="bottom-nav-item"  
+    data-page="party"  
+    type="button"  
+>  
+
+    <span class="bottom-icon">  
+
+        <svg viewBox="0 0 24 24">  
+
+            <path d="M4 20h16"></path>  
+
+            <path d="M6 17v-5"></path>  
+
+            <path d="M10 17V8"></path>  
+
+            <path d="M14 17v-7"></path>  
+
+            <path d="M18 17V5"></path>  
+
+            <path d="M6 5l4-2 4 3 4-2"></path>  
+
+        </svg>  
+
+    </span>  
+
+    <span>  
+        Party  
+    </span>  
+
+</button>  
+
+
+
+<!-- MESSAGE -->  
+
+<button  
+    class="bottom-nav-item"  
+    data-page="message"  
+    type="button"  
+>  
+
+    <span class="bottom-icon">  
+
+        <svg viewBox="0 0 24 24">  
+
+            <path  
+                d="M20 11.5a7.5 7.5 0 0 1-8 7.5  
+                8.6 8.6 0 0 1-3.2-.6  
+                L4 20l1.6-3.8  
+                A7.1 7.1 0 0 1 4 11.5  
+                7.5 7.5 0 0 1 12 4  
+                7.5 7.5 0 0 1 20 11.5Z"  
+            ></path>  
+
+            <circle  
+                cx="8.5"  
+                cy="11.5"  
+                r=".5"  
+            ></circle>  
+
+            <circle  
+                cx="12"  
+                cy="11.5"  
+                r=".5"  
+            ></circle>  
+
+            <circle  
+                cx="15.5"  
+                cy="11.5"  
+                r=".5"  
+            ></circle>  
+
+        </svg>  
+
+    </span>  
+
+    <span>  
+        Message  
+    </span>  
+
+</button>  
+
+
+
+<!-- ME -->  
+
+<button  
+    class="bottom-nav-item active"  
+    data-page="me"  
+    type="button"  
+>  
+
+    <span class="bottom-icon">  
+
+        <svg viewBox="0 0 24 24">  
+
+            <circle  
+                cx="12"  
+                cy="8"  
+                r="3.5"  
+            ></circle>  
+
+            <path  
+                d="M5 21c.8-4  
+                   3.2-6 7-6  
+                   s6.2 2 7 6"  
+            ></path>  
+
+        </svg>  
+
+    </span>  
+
+    <span>  
+        Me  
+    </span>  
+
+</button>
+
+</nav>  <!-- SUPABASE -->  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>  <!-- LARCK ME JAVASCRIPT -->  <script src="page5.js"></script> 
+
+
+<script src="room-presence.js"></script> 
+</body> 
+ </html>

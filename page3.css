@@ -1,0 +1,565 @@
+
+/* =========================================
+   LARCK PARTY CREATION PAGE
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --party-cyan: #08c9c5;
+    --party-blue: #3989f5;
+    --party-purple: #852cf3;
+    --text-dark: #202034;
+    --text-muted: #77778c;
+}
+
+html {
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background: #17152d;
+}
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.party-create-page {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: hidden;
+    padding: 78px 16px 35px;
+
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(13, 12, 32, 0.48) 0%,
+            rgba(17, 14, 38, 0.72) 48%,
+            rgba(15, 13, 35, 0.91) 100%
+        ),
+        url("partyimage.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+/* Soft background glow */
+
+.party-create-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 5% 20%,
+            rgba(8, 201, 197, 0.18),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 95% 65%,
+            rgba(133, 44, 243, 0.22),
+            transparent 38%
+        );
+}
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.close-party {
+    position: absolute;
+    top: 17px;
+    left: 16px;
+    z-index: 5;
+
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.13);
+    color: white;
+
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1;
+
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.close-party:active {
+    transform: scale(0.92);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.party-content {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.page-heading {
+    margin-bottom: 25px;
+}
+
+.heading-tag {
+    display: inline-block;
+    margin-bottom: 9px;
+
+    color: #78f7ed;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+}
+
+.page-heading h1 {
+    color: #fff;
+    font-size: clamp(25px, 7vw, 31px);
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.page-heading p {
+    max-width: 330px;
+    margin-top: 9px;
+
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+/* =========================================
+   MY ROOMS
+========================================= */
+
+.my-rooms-section {
+    margin-bottom: 20px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 13px;
+}
+
+.section-heading h2 {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 750;
+}
+
+.section-heading > span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 11px;
+}
+
+.saved-room {
+    width: 94px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+}
+
+.saved-room-image {
+    position: relative;
+    width: 82px;
+    height: 82px;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 17px;
+
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.saved-room-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recording-dot {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+
+    width: 11px;
+    height: 11px;
+    border: 2px solid rgba(30, 20, 45, 0.8);
+    border-radius: 50%;
+    background: #ff354f;
+
+    box-shadow: 0 0 9px rgba(255, 53, 79, 0.75);
+}
+
+.saved-room-name {
+    width: 100%;
+    overflow: hidden;
+
+    color: #fff;
+    font-size: 12px;
+    font-weight: 750;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.saved-room:active .saved-room-image {
+    transform: scale(0.96);
+}
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.create-room-card {
+    padding: 19px 16px 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 23px;
+
+    background: rgba(255, 255, 255, 0.13);
+
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.17);
+
+    backdrop-filter: blur(17px);
+    -webkit-backdrop-filter: blur(17px);
+}
+
+.field-group {
+    margin-bottom: 20px;
+}
+
+.field-label {
+    display: block;
+    margin-bottom: 10px;
+
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* =========================================
+   IMAGE UPLOAD
+========================================= */
+
+.image-upload {
+    width: 100%;
+    min-height: 91px;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 12px;
+
+    border: 1.5px dashed rgba(255, 255, 255, 0.52);
+    border-radius: 17px;
+
+    background: rgba(255, 255, 255, 0.09);
+    color: white;
+    text-align: left;
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.image-upload:active {
+    background: rgba(255, 255, 255, 0.17);
+}
+
+.upload-preview {
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.13);
+}
+
+.upload-preview svg {
+    width: 29px;
+    height: 29px;
+
+    fill: none;
+    stroke: #9dfaf0;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.upload-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.upload-copy {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.upload-copy strong {
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.upload-copy small {
+    color: rgba(255, 255, 255, 0.69);
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.upload-arrow {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(8, 201, 197, 0.2);
+    color: #a0fff7;
+    font-size: 21px;
+}
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.room-input {
+    display: block;
+    width: 100%;
+
+    padding: 14px 13px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 14px;
+    outline: none;
+
+    background: rgba(15, 13, 36, 0.26);
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.room-input::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.room-input:focus {
+    border-color: #5be7df;
+    background: rgba(15, 13, 36, 0.4);
+}
+
+.room-description {
+    min-height: 93px;
+    resize: vertical;
+    line-height: 1.55;
+}
+
+.description-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.description-heading .field-label {
+    margin-bottom: 10px;
+}
+
+#descriptionCount {
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+}
+
+/* =========================================
+   START PARTY BUTTON
+========================================= */
+
+.start-party-button {
+    width: 100%;
+    min-height: 53px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 13px 18px;
+
+    border: none;
+    border-radius: 16px;
+
+    background: linear-gradient(
+        110deg,
+        #08c9c5 0%,
+        #388cf7 48%,
+        #8a35f4 100%
+    );
+
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+
+    box-shadow: 0 8px 22px rgba(70, 91, 239, 0.3);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+.start-party-button:active {
+    transform: scale(0.98);
+    filter: brightness(1.08);
+}
+
+.start-party-icon {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.form-message {
+    display: none;
+    margin-top: 12px;
+
+    color: #c6fff7;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.form-message.visible {
+    display: block;
+}
+
+/* =========================================
+   FOOTER NOTE
+========================================= */
+
+.bottom-note {
+    padding: 17px 5px 0;
+
+    color: rgba(255, 255, 255, 0.59);
+    font-size: 10px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 370px) {
+    .party-create-page {
+        padding: 72px 12px 25px;
+    }
+
+    .close-party {
+        top: 13px;
+        left: 12px;
+        width: 39px;
+        height: 39px;
+    }
+
+    .page-heading {
+        margin-bottom: 21px;
+    }
+
+    .create-room-card {
+        padding: 16px 12px 14px;
+        border-radius: 20px;
+    }
+
+    .field-group {
+        margin-bottom: 17px;
+    }
+
+    .saved-room-image {
+        width: 76px;
+        height: 76px;
+    }
+}
+
+/* Respect devices that reduce motion */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}

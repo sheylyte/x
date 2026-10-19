@@ -1,0 +1,1178 @@
+
+:root {
+    --page-bg: #fdfbfe;
+    --text: #202033;
+    --muted: #918ba8;
+    --purple: #8525f7;
+    --pink: #ed2096;
+    --line: #f1eafa;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    background: var(--page-bg);
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--page-bg);
+    color: var(--text);
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.points-page {
+    width: 100%;
+    max-width: 600px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    overflow: hidden;
+}
+
+/* GRADIENT HEADER */
+
+.points-hero {
+    position: relative;
+    height: 482px;
+    padding: 0 22px;
+    color: white;
+    overflow: hidden;
+    border-radius: 0 0 0 0;
+    background:
+        radial-gradient(circle at 88% 10%, rgba(255,255,255,.16), transparent 32%),
+        linear-gradient(125deg, #fa238f 0%, #c31a9c 49%, #7119df 100%);
+}
+
+.points-topbar {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 7px;
+    position: relative;
+    z-index: 2;
+}
+
+.back-button {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    border-radius: 17px;
+    color: white;
+    background: rgba(255,255,255,.18);
+    font-size: 37px;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+}
+
+.points-topbar h1 {
+    font-size: clamp(20px, 5.2vw, 28px);
+    letter-spacing: -.8px;
+    margin: 0;
+    flex: 1;
+    white-space: nowrap;
+}
+
+.history-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    flex-shrink: 0;
+    padding: 11px 13px;
+    color: white;
+    background: rgba(255,255,255,.2);
+    border: 1.5px solid rgba(255,255,255,.65);
+    border-radius: 28px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.history-icon {
+    font-size: 23px;
+    line-height: 1;
+}
+
+.balance-area {
+    position: relative;
+    z-index: 2;
+    margin-top: 35px;
+}
+
+.balance-label {
+    margin: 0 0 9px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255,255,255,.86);
+}
+
+.balance-area h2 {
+    margin: 0;
+    font-size: clamp(43px, 11vw, 60px);
+    line-height: 1.08;
+    letter-spacing: -1.8px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+
+.balance-badges {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 22px;
+}
+
+.balance-badges span {
+    display: inline-flex;
+    min-height: 36px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.value-badge {
+    background: rgba(255,255,255,.2);
+    color: white;
+}
+
+.conversion-badge {
+    background: #ffb844;
+    color: #59310d;
+}
+
+.points-decoration {
+    position: absolute;
+    right: 34px;
+    top: 208px;
+    color: rgba(255,255,255,.85);
+    font-size: 88px;
+    text-shadow: 0 8px 25px rgba(62,0,99,.15);
+    transform: rotate(12deg);
+}
+
+/* ACTION CARDS */
+
+.action-cards {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    padding: 0 22px;
+    margin-top: -74px;
+}
+
+.action-card {
+    min-width: 0;
+    min-height: 188px;
+    padding: 20px 17px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    border: 0;
+    border-radius: 29px;
+    background: white;
+    box-shadow: 0 5px 14px rgba(37, 25, 55, .13);
+    color: var(--text);
+}
+
+.action-icon {
+    width: 63px;
+    height: 63px;
+    border-radius: 23px;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 22px;
+}
+
+.exchange-icon {
+    background: linear-gradient(140deg, #ffe5a0, #ffc338);
+    color: #d98a00;
+}
+
+.withdraw-icon {
+    background: linear-gradient(145deg, #ef299c, #8a25ef);
+}
+
+.action-title {
+    font-size: clamp(17px, 4.5vw, 22px);
+    font-weight: 800;
+    letter-spacing: -.5px;
+}
+
+.action-description {
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.35;
+}
+
+/* RECENT ACTIVITY */
+
+.activity-section {
+    padding: 0 22px;
+    margin-top: 38px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 19px;
+}
+
+.section-heading h2 {
+    font-size: clamp(20px, 5.3vw, 27px);
+    letter-spacing: -.6px;
+    margin: 0;
+}
+
+.section-heading button {
+    border: 0;
+    background: transparent;
+    color: #bd1596;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 6px 0 6px 8px;
+}
+
+.activity-list {
+    border: 1.5px solid var(--line);
+    border-radius: 30px;
+    background: white;
+    padding: 0 17px;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    padding: 16px 0;
+}
+
+.activity-item + .activity-item {
+    border-top: 1px solid var(--line);
+}
+
+.gift-icon {
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+    display: grid;
+    place-items: center;
+    border-radius: 23px;
+    background: #fff0f8;
+    font-size: 26px;
+}
+
+.activity-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.activity-details h3 {
+    margin: 0;
+    font-size: clamp(14px, 3.9vw, 19px);
+    letter-spacing: -.35px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.activity-details p {
+    margin: 7px 0 0;
+    font-size: 13px;
+    line-height: 1.3;
+    color: var(--muted);
+}
+
+.activity-amount {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 7px;
+    flex-shrink: 0;
+}
+
+.activity-amount strong {
+    font-size: clamp(14px, 3.8vw, 19px);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.activity-amount span {
+    border-radius: 20px;
+    padding: 4px 10px;
+    background: #f2e7ff;
+    color: #8b2dff;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+/* HOW POINTS WORK */
+
+.points-guide {
+    margin: 28px 22px 0;
+    padding: 25px 20px;
+    border-radius: 29px;
+    background: #faf7fd;
+}
+
+.points-guide h2 {
+    margin: 0 0 22px;
+    font-size: 20px;
+    letter-spacing: -.4px;
+}
+
+.guide-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.guide-item + .guide-item {
+    margin-top: 17px;
+}
+
+.guide-number {
+    width: 31px;
+    height: 31px;
+    flex: 0 0 31px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #f0e6ff;
+    color: #872dff;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.guide-item p {
+    margin: 2px 0 0;
+    color: #514c68;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+/* HISTORY FULL-SCREEN OVERLAY */
+
+.history-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    overflow-y: auto;
+    background: var(--page-bg);
+    padding: 0 22px 30px;
+}
+
+.history-overlay.active {
+    display: block;
+}
+
+.history-header {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.history-header button {
+    width: 43px;
+    height: 43px;
+    border: 0;
+    border-radius: 15px;
+    background: #f1e7fc;
+    color: #7625da;
+    font-size: 32px;
+    line-height: 1;
+}
+
+.history-header h2 {
+    font-size: 23px;
+    margin: 0;
+}
+
+.history-filters {
+    display: flex;
+    gap: 10px;
+    margin: 18px 0;
+}
+
+.filter-button {
+    border: 0;
+    border-radius: 22px;
+    padding: 10px 17px;
+    background: #f0ebf6;
+    color: #69617c;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.filter-button.active {
+    background: linear-gradient(110deg, #ed269c, #8c29f3);
+    color: white;
+}
+
+.history-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.history-summary > div {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 17px 13px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 19px;
+}
+
+.history-summary span {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.history-summary strong {
+    font-size: 22px;
+}
+
+.history-items .activity-item {
+    padding: 16px 0;
+}
+
+.history-note {
+    margin: 25px 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* ACTION MESSAGE */
+
+.message-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    background: rgba(26, 14, 38, .5);
+}
+
+.message-overlay.active {
+    display: flex;
+}
+
+.message-card {
+    position: relative;
+    width: 100%;
+    max-width: 330px;
+    padding: 28px 22px 22px;
+    text-align: center;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(0,0,0,.15);
+}
+
+.message-card > button:first-child {
+    position: absolute;
+    right: 13px;
+    top: 10px;
+    border: 0;
+    background: transparent;
+    color: #7d758b;
+    font-size: 27px;
+}
+
+.message-symbol {
+    width: 57px;
+    height: 57px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 14px;
+    border-radius: 20px;
+    background: #f5e9ff;
+    color: #8d2bed;
+    font-size: 28px;
+}
+
+.message-card h2 {
+    font-size: 22px;
+    margin: 0 0 10px;
+}
+
+.message-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 22px;
+}
+
+.message-ok {
+    width: 100%;
+    padding: 13px;
+    border: 0;
+    border-radius: 16px;
+    background: linear-gradient(110deg, #ed269c, #8c29f3);
+    color: white;
+    font-weight: 700;
+}
+
+/* SMALL ANDROID PHONES */
+
+@media (max-width: 390px) {
+    .points-hero {
+        height: 455px;
+        padding: 0 16px;
+    }
+
+    .points-topbar {
+        gap: 8px;
+    }
+
+    .back-button {
+        flex-basis: 42px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .points-topbar h1 {
+        font-size: 20px;
+    }
+
+    .history-button {
+        gap: 5px;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .balance-area {
+        margin-top: 32px;
+    }
+
+    .points-decoration {
+        right: 20px;
+        top: 205px;
+        font-size: 65px;
+    }
+
+    .action-cards {
+        gap: 10px;
+        padding: 0 16px;
+        margin-top: -66px;
+    }
+
+    .action-card {
+        min-height: 174px;
+        padding: 17px 13px;
+        border-radius: 24px;
+    }
+
+    .action-icon {
+        width: 53px;
+        height: 53px;
+        border-radius: 19px;
+        margin-bottom: 20px;
+    }
+
+    .action-description {
+        font-size: 12px;
+    }
+
+    .activity-section {
+        padding: 0 16px;
+        margin-top: 32px;
+    }
+
+    .activity-list {
+        padding: 0 11px;
+        border-radius: 24px;
+    }
+
+    .activity-item {
+        gap: 9px;
+        padding: 14px 0;
+    }
+
+    .gift-icon {
+        width: 43px;
+        height: 43px;
+        flex-basis: 43px;
+        border-radius: 16px;
+        font-size: 22px;
+    }
+
+    .activity-details p {
+        font-size: 11px;
+    }
+
+    .activity-amount span {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+
+    .points-guide {
+        margin: 24px 16px 0;
+        padding: 21px 16px;
+        border-radius: 24px;
+    }
+
+    .guide-item p {
+        font-size: 13px;
+    }
+
+    .history-overlay {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+}
+
+@media (max-width: 340px) {
+    .points-topbar {
+        gap: 6px;
+    }
+
+    .points-topbar h1 {
+        font-size: 18px;
+    }
+
+    .back-button {
+        flex-basis: 38px;
+        width: 38px;
+        height: 40px;
+    }
+
+    .history-button {
+        padding: 9px 8px;
+        font-size: 11px;
+    }
+
+    .action-cards {
+        gap: 8px;
+        padding: 0 12px;
+    }
+
+    .action-card {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .activity-section {
+        padding: 0 12px;
+    }
+
+    .activity-details h3 {
+        font-size: 13px;
+    }
+
+    .activity-details p {
+        font-size: 10px;
+    }
+
+    .activity-amount strong {
+        font-size: 13px;
+    }
+
+    .points-guide {
+        margin-right: 12px;
+        margin-left: 12px;
+    }
+}
+
+
+/* COMPACT LARCK POINTS PAGE */
+.points-hero {
+    height: 340px;
+}
+
+.points-topbar {
+    height: 62px;
+    gap: 9px;
+}
+
+.back-button {
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 13px;
+    font-size: 30px;
+}
+
+.points-topbar h1 {
+    font-size: 21px;
+}
+
+.history-button {
+    padding: 8px 10px;
+    font-size: 12px;
+}
+
+.history-icon {
+    font-size: 19px;
+}
+
+.balance-area {
+    margin-top: 27px;
+}
+
+.balance-label {
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+.balance-area h2 {
+    font-size: clamp(34px, 9vw, 46px);
+}
+
+.balance-badges {
+    gap: 7px;
+    margin-top: 14px;
+}
+
+.balance-badges span {
+    min-height: 30px;
+    padding: 0 11px;
+    font-size: 12px;
+}
+
+.points-decoration {
+    top: 170px;
+    right: 23px;
+    font-size: 65px;
+}
+
+.action-cards {
+    gap: 10px;
+    padding: 0 16px;
+    margin-top: -45px;
+}
+
+.action-card {
+    min-height: 135px;
+    padding: 13px;
+    border-radius: 21px;
+}
+
+.action-icon {
+    width: 43px;
+    height: 43px;
+    border-radius: 15px;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.action-title {
+    font-size: 16px;
+}
+
+.action-description {
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+.activity-section {
+    margin-top: 24px;
+    padding: 0 16px;
+}
+
+.section-heading {
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-size: 19px;
+}
+
+.activity-list {
+    border-radius: 20px;
+    padding: 0 12px;
+}
+
+.activity-item {
+    gap: 9px;
+    padding: 11px 0;
+}
+
+.gift-icon {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+    border-radius: 13px;
+    font-size: 19px;
+}
+
+.activity-details h3 {
+    font-size: 13px;
+}
+
+.activity-details p {
+    margin-top: 4px;
+    font-size: 10px;
+}
+
+.activity-amount strong {
+    font-size: 13px;
+}
+
+.activity-amount span {
+    font-size: 10px;
+}
+
+.points-guide {
+    margin: 20px 16px 0;
+    padding: 17px;
+    border-radius: 21px;
+}
+
+.points-guide h2 {
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.guide-item p {
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.guide-item + .guide-item {
+    margin-top: 12px;
+}
+
+/* SMALL PHONE ADJUSTMENTS */
+@media (max-width: 390px) {
+    .points-hero {
+        height: 325px;
+        padding: 0 16px;
+    }
+
+    .balance-area {
+        margin-top: 25px;
+    }
+
+    .points-decoration {
+        top: 160px;
+        right: 17px;
+        font-size: 55px;
+    }
+
+    .action-cards {
+        margin-top: -40px;
+    }
+
+    .action-card {
+        min-height: 130px;
+    }
+}
+
+/* REMOVE FAKE ACTIVITY UNTIL REAL DATA IS CONNECTED */
+.activity-list:empty::after {
+    content: "No recent activity yet";
+    display: block;
+    padding: 22px 8px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* FIXED, BALANCED ANDROID POINTS SCREEN */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+.points-page {
+    width: 100%;
+    max-width: 600px;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.points-page::-webkit-scrollbar {
+    display: none;
+}
+
+.points-hero {
+    height: 290px;
+    padding: 0 18px;
+}
+
+.points-topbar {
+    height: 58px;
+    gap: 8px;
+    padding-top: 3px;
+}
+
+.back-button {
+    flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    font-size: 28px;
+}
+
+.points-topbar h1 {
+    font-size: 19px;
+    letter-spacing: -0.4px;
+}
+
+.history-button {
+    gap: 5px;
+    padding: 7px 9px;
+    font-size: 11px;
+}
+
+.history-icon {
+    font-size: 17px;
+}
+
+.balance-area {
+    margin-top: 22px;
+}
+
+.balance-label {
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.balance-area h2 {
+    font-size: clamp(32px, 8vw, 42px);
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.balance-badges {
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.balance-badges span {
+    min-height: 27px;
+    padding: 0 9px;
+    font-size: 11px;
+}
+
+.points-decoration {
+    top: 145px;
+    right: 16px;
+    font-size: 48px;
+}
+
+.action-cards {
+    gap: 10px;
+    padding: 0 14px;
+    margin-top: -30px;
+}
+
+.action-card {
+    min-height: 112px;
+    padding: 11px;
+    border-radius: 19px;
+}
+
+.action-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 8px;
+    border-radius: 12px;
+    font-size: 20px;
+}
+
+.action-title {
+    font-size: 14px;
+}
+
+.action-description {
+    margin-top: 3px;
+    font-size: 10px;
+}
+
+.activity-section {
+    margin-top: 19px;
+    padding: 0 14px;
+}
+
+.section-heading {
+    margin-bottom: 9px;
+}
+
+.section-heading h2 {
+    font-size: 17px;
+}
+
+.section-heading button {
+    font-size: 12px;
+}
+
+.activity-list {
+    padding: 0 10px;
+    border-radius: 17px;
+}
+
+.activity-item {
+    gap: 8px;
+    padding: 9px 0;
+}
+
+.gift-icon {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    border-radius: 11px;
+    font-size: 17px;
+}
+
+.activity-details h3 {
+    font-size: 12px;
+}
+
+.activity-details p {
+    margin-top: 3px;
+    font-size: 10px;
+}
+
+.activity-amount {
+    gap: 4px;
+}
+
+.activity-amount strong {
+    font-size: 12px;
+}
+
+.activity-amount span {
+    padding: 3px 7px;
+    font-size: 9px;
+}
+
+.points-guide {
+    margin: 16px 14px 0;
+    padding: 13px;
+    border-radius: 18px;
+}
+
+.points-guide h2 {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.guide-item {
+    gap: 8px;
+}
+
+.guide-item + .guide-item {
+    margin-top: 8px;
+}
+
+.guide-number {
+    width: 24px;
+    height: 24px;
+    flex-basis: 24px;
+    font-size: 11px;
+}
+
+.guide-item p {
+    margin-top: 1px;
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+/* SHORT ANDROID SCREENS */
+@media (max-height: 740px) {
+    .points-hero {
+        height: 260px;
+    }
+
+    .balance-area {
+        margin-top: 15px;
+    }
+
+    .points-decoration {
+        top: 125px;
+    }
+
+    .action-card {
+        min-height: 100px;
+    }
+
+    .activity-section {
+        margin-top: 14px;
+    }
+
+    .points-guide {
+        margin-top: 12px;
+        padding: 11px;
+    }
+
+    .guide-item + .guide-item {
+        margin-top: 6px;
+    }
+}
+
+/* KEEP OVERLAYS USABLE */
+.history-overlay {
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.message-overlay {
+    overflow-y: auto;
+}
+
+
+
+/* REAL ACTIVITY EMPTY STATE */
+.empty-activity {
+    margin: 0;
+    padding: 18px 8px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Keep activity list compact */
+.activity-list {
+    min-height: 52px;
+}

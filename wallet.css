@@ -1,0 +1,1422 @@
+
+/* =====================================
+   LARCK MY WALLET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    background: #f8f1f5;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #191727;
+    background: linear-gradient(180deg, #fde7ed 0%, #f7f2f6 100%);
+    overflow-x: hidden;
+}
+
+/* STATUS BAR SPACE */
+
+.status-bar-space {
+    height: 72px;
+    background: #ffcfb0;
+}
+
+/* HEADER */
+
+.wallet-header {
+    position: relative;
+    width: 100%;
+    height: 132px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(105deg, #08c9c5 0%, #c20ac2 55%, #08c9c5 100%);
+    color: #ffffff;
+}
+
+.wallet-header h1 {
+    font-size: 34px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.back-button {
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 54px;
+    border: none;
+    background: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.back-button svg {
+    width: 40px;
+    height: 40px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.history-button {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 62px;
+    padding: 0 15px;
+    border: none;
+    border-radius: 40px;
+    background: #ff2638;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.history-button svg {
+    width: 34px;
+    height: 34px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* MAIN WALLET */
+
+.wallet-content {
+    padding: 29px 24px 50px;
+    width: 100%;
+}
+
+/* BALANCE CARD */
+
+.balance-card {
+    width: 100%;
+    height: 180px;
+    border-radius: 37px;
+    padding: 24px 38px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    background: linear-gradient(105deg, #8000ff 0%, #c20ac0 56%, #08c9c5 100%);
+    color: white;
+}
+
+.big-coin,
+.seller-coin,
+.package-coin {
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff17a;
+    background: radial-gradient(circle at 32% 25%, #ffe96a 0%, #ffbe00 58%, #e99000 100%);
+    border: 5px solid #ffbd00;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 3px rgba(255, 248, 149, 0.65), 0 4px 0 #d98200;
+    text-shadow: 1px 2px 1px #c98200;
+}
+
+.big-coin {
+    width: 76px;
+    height: 76px;
+}
+
+.big-coin span {
+    font-size: 49px;
+    line-height: 1;
+}
+
+.balance-information {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.balance-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 57px;
+    padding: 0 24px;
+    border-radius: 40px;
+    background: rgba(74, 0, 111, 0.65);
+    font-size: 24px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.balance-information strong {
+    font-size: 58px;
+    line-height: 1;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+/* COIN SELLERS */
+
+.coin-sellers-button {
+    width: calc(100% - 12px);
+    height: 96px;
+    margin: 29px 6px 0;
+    border: none;
+    border-radius: 26px;
+    background: #1268ed;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    font-size: 29px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.seller-coin {
+    width: 37px;
+    height: 37px;
+    border-width: 3px;
+    font-size: 25px;
+}
+
+/* PLAN HEADING */
+
+.plans-heading {
+    margin-top: 27px;
+    margin-bottom: 27px;
+    font-size: 29px;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+/* RECHARGE GRID */
+
+
+
+/* RECHARGE GRID */
+
+.recharge-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, 180px);
+    align-content: start;
+    align-items: start;
+    gap: 4px;
+    flex: none;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+}
+
+
+
+.recharge-card {
+    min-width: 0;
+    height: 165px;
+    min-height: 0;
+    padding: 8px 8px 8px;
+    border: none;
+    border-radius: 18px;
+    background: #e6dce2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+
+.recharge-card:active {
+    transform: scale(0.97);
+}
+
+.package-coin {
+    width: 65px;
+    height: 65px;
+    border-width: 4px;
+    font-size: 45px;
+    margin-top: 0;
+}
+
+.package-amount {
+    display: block;
+    max-width: 100%;
+    color: #df00b8;
+    font-size: 24px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.price-button {
+    width: 100%;
+    min-height: 49px;
+    border-radius: 30px;
+    background: linear-gradient(100deg, #22d3f2 0%, #4e8bff 60%, #6846ff 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 29px;
+    font-weight: 800;
+    box-shadow: 0 3px 5px rgba(69, 83, 200, 0.14);
+}
+
+/* MESSAGE */
+
+.wallet-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 28px;
+    z-index: 100;
+    max-width: calc(100% - 40px);
+    padding: 13px 20px;
+    border-radius: 14px;
+    background: #292333;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 12px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.wallet-toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+/* RESPONSIVE LAYOUT */
+
+@media (max-width: 600px) {
+    .status-bar-space {
+        height: 72px;
+    }
+
+    .wallet-header {
+        height: 132px;
+    }
+
+    .wallet-header h1 {
+        font-size: 30px;
+    }
+
+    .back-button {
+        left: 24px;
+    }
+
+    .history-button {
+        right: 24px;
+        height: 60px;
+        padding: 0 12px;
+        gap: 5px;
+        font-size: 21px;
+    }
+
+    .history-button svg {
+        width: 31px;
+        height: 31px;
+    }
+
+    .wallet-content {
+        padding: 29px 24px 45px;
+    }
+
+    .balance-card {
+        height: 180px;
+        padding: 24px 36px;
+        gap: 60px;
+        border-radius: 37px;
+    }
+
+    .big-coin {
+        width: 76px;
+        height: 76px;
+    }
+
+    .balance-label {
+        min-height: 57px;
+        padding: 0 24px;
+        font-size: 24px;
+    }
+
+    .balance-information strong {
+        font-size: 58px;
+    }
+
+    .coin-sellers-button {
+        height: 96px;
+        margin-top: 29px;
+        font-size: 29px;
+    }
+
+    .plans-heading {
+        font-size: 29px;
+        margin-top: 27px;
+        margin-bottom: 27px;
+    }
+
+    .recharge-grid {
+        gap: 6px;
+        padding: 0 12px;
+    }
+
+    .recharge-card {
+        height: 165px;
+        padding: 28px 12px 12px;
+        border-radius: 24px;
+    }
+
+    .package-coin {
+        width: 65px;
+        height: 65px;
+        font-size: 45px;
+    }
+
+    .package-amount {
+        font-size: 24px;
+    }
+
+    .price-button {
+        min-height: 49px;
+        font-size: 29px;
+    }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 390px) {
+    .wallet-content {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .wallet-header h1 {
+        font-size: 25px;
+    }
+
+    .back-button {
+        left: 8px;
+        width: 40px;
+    }
+
+    .history-button {
+        right: 9px;
+        height: 48px;
+        padding: 0 9px;
+        font-size: 16px;
+    }
+
+    .history-button svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .balance-card {
+        padding: 18px 17px;
+        gap: 17px;
+    }
+
+    .big-coin {
+        width: 61px;
+        height: 61px;
+    }
+
+    .big-coin span {
+        font-size: 38px;
+    }
+
+    .balance-label {
+        min-height: 46px;
+        padding: 0 15px;
+        font-size: 19px;
+    }
+
+    .balance-information {
+        gap: 18px;
+    }
+
+    .balance-information strong {
+        font-size: 43px;
+    }
+
+    .coin-sellers-button {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        height: 78px;
+        font-size: 23px;
+    }
+
+    .plans-heading {
+        font-size: 24px;
+    }
+
+    .recharge-grid {
+        gap: 6px;
+        padding: 0 3px;
+    }
+
+    .recharge-card {
+        height: 165px;
+        padding: 18px 7px 9px;
+        border-radius: 19px;
+    }
+
+    .package-coin {
+        width: 49px;
+        height: 49px;
+        font-size: 33px;
+        margin-top: 0;
+    }
+
+    .package-amount {
+        font-size: clamp(13px, 4vw, 19px);
+    }
+
+    .price-button {
+        min-height: 39px;
+        font-size: 21px;
+    }
+}
+
+
+
+/* =====================================
+   ANDROID WALLET — FIXED SCREEN LAYOUT
+===================================== */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    margin: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: #f8f1f5;
+}
+
+/* Remove the fake phone status-bar space */
+.status-bar-space {
+    display: none;
+}
+
+/* Compact header */
+.wallet-header {
+    flex: 0 0 76px;
+    height: 76px;
+    min-height: 76px;
+}
+
+.wallet-header h1 {
+    font-size: 24px;
+}
+
+.back-button {
+    left: 12px;
+    width: 38px;
+    height: 42px;
+}
+
+.back-button svg {
+    width: 30px;
+    height: 30px;
+}
+
+.history-button {
+    right: 10px;
+    height: 42px;
+    padding: 0 10px;
+    gap: 5px;
+    font-size: 15px;
+}
+
+.history-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Fit wallet content inside the remaining screen */
+.wallet-content {
+    flex: 1;
+    min-height: 0;
+    padding: 16px 14px 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Smaller balance card */
+.balance-card {
+    flex: 0 0 112px;
+    height: 112px;
+    min-height: 112px;
+    padding: 12px 20px;
+    gap: 24px;
+    border-radius: 25px;
+}
+
+.big-coin {
+    width: 54px;
+    height: 54px;
+    border-width: 3px;
+}
+
+.big-coin span {
+    font-size: 35px;
+}
+
+.balance-information {
+    gap: 8px;
+}
+
+.balance-label {
+    min-height: 35px;
+    padding: 0 17px;
+    font-size: 17px;
+}
+
+.balance-information strong {
+    font-size: 36px;
+}
+
+/* Coin sellers */
+.coin-sellers-button {
+    flex: 0 0 58px;
+    width: 100%;
+    height: 58px;
+    min-height: 58px;
+    margin: 16px 0 0;
+    border-radius: 18px;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.seller-coin {
+    width: 29px;
+    height: 29px;
+    font-size: 19px;
+    border-width: 2px;
+}
+
+/* Recharge heading */
+.plans-heading {
+    flex: 0 0 auto;
+    margin: 17px 0 14px;
+    font-size: 21px;
+    line-height: 1.2;
+}
+
+/* Compact grid that uses the remaining height */
+.recharge-grid {
+    flex: 1;
+    min-height: 0;
+    padding: 0 6px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    overflow: hidden;
+}
+
+/* Smaller recharge cards */
+
+.recharge-card {
+    min-width: 0;
+    height: 165px;
+    padding: 8px 5px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 18px;
+    background: #e6dce2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.recharge-card:active {
+    transform: scale(0.97);
+}
+
+.package-coin {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    border-width: 3px;
+    font-size: 23px;
+    margin-top: 14px;
+}
+
+.package-amount {
+    display: block;
+    max-width: 100%;
+    color: #df00b8;
+    font-size: 14px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.price-button {
+    width: 100%;
+    height: 25px;
+    min-height: 25px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: linear-gradient(
+        100deg,
+        #22d3f2 0%,
+        #4e8bff 60%,
+        #6846ff 100%
+    );
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 800;
+    box-shadow: 0 3px 5px rgba(69, 83, 200, 0.14);
+}
+
+
+/* Short Android screens */
+@media (max-height: 740px) {
+    .wallet-header {
+        flex-basis: 66px;
+        height: 66px;
+        min-height: 66px;
+    }
+
+    .wallet-content {
+        padding-top: 10px;
+        padding-bottom: 8px;
+    }
+
+    .balance-card {
+        flex-basis: 96px;
+        height: 96px;
+        min-height: 96px;
+    }
+
+    .coin-sellers-button {
+        flex-basis: 49px;
+        height: 49px;
+        min-height: 49px;
+        margin-top: 10px;
+    }
+
+    .plans-heading {
+        margin-top: 12px;
+        margin-bottom: 9px;
+        font-size: 19px;
+    }
+
+    .recharge-grid {
+        gap: 6px;
+    }
+}
+
+
+
+/* =====================================
+   EXTRA-COMPACT ANDROID WALLET
+===================================== */
+
+.wallet-header {
+    flex-basis: 52px;
+    height: 52px;
+    min-height: 52px;
+}
+
+.wallet-header h1 {
+    font-size: 18px;
+}
+
+.back-button {
+    left: 8px;
+    width: 30px;
+    height: 34px;
+}
+
+.back-button svg {
+    width: 23px;
+    height: 23px;
+    stroke-width: 2.5;
+}
+
+.history-button {
+    right: 7px;
+    height: 32px;
+    padding: 0 7px;
+    gap: 3px;
+    font-size: 11px;
+}
+
+.history-button svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* CONTENT SPACING */
+.wallet-content {
+    padding: 8px 10px 8px;
+}
+
+/* SMALLER COIN BALANCE */
+.balance-card {
+    flex-basis: 76px;
+    height: 76px;
+    min-height: 76px;
+    padding: 8px 13px;
+    gap: 15px;
+    border-radius: 17px;
+}
+
+.big-coin {
+    width: 40px;
+    height: 40px;
+    border-width: 2px;
+}
+
+.big-coin span {
+    font-size: 25px;
+}
+
+.balance-information {
+    gap: 4px;
+}
+
+.balance-label {
+    min-height: 25px;
+    padding: 0 10px;
+    font-size: 12px;
+}
+
+.balance-information strong {
+    font-size: 25px;
+}
+
+/* SMALLER COIN SELLERS BUTTON */
+.coin-sellers-button {
+    flex-basis: 40px;
+    height: 40px;
+    min-height: 40px;
+    margin-top: 9px;
+    border-radius: 12px;
+    gap: 7px;
+    font-size: 14px;
+}
+
+.seller-coin {
+    width: 22px;
+    height: 22px;
+    font-size: 14px;
+    border-width: 2px;
+}
+
+/* RECHARGE TITLE */
+.plans-heading {
+    margin: 10px 0 8px;
+    font-size: 16px;
+}
+
+/* SMALLER FIXED GRID */
+
+.recharge-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, 165px);
+    align-content: start;
+    align-items: start;
+    gap: 6px;
+    flex: none;
+    height: auto;
+    min-height: 0;
+    padding: 0 3px;
+    overflow: visible;
+}
+
+
+/* SMALLER PACKAGE CARDS */
+.recharge-card {
+    padding: 6px 4px;
+    border-radius: 12px;
+}
+
+.package-coin {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    margin-top: 0;
+    border-width: 2px;
+    font-size: 21px;
+}
+
+.package-amount {
+    font-size: clamp(10px, 3.3vw, 14px);
+    letter-spacing: -0.4px;
+}
+
+.price-button {
+    height: 27px;
+    min-height: 27px;
+    border-radius: 18px;
+    font-size: 15px;
+}
+
+/* SHORT PHONE SCREENS */
+@media (max-height: 740px) {
+    .wallet-header {
+        flex-basis: 46px;
+        height: 46px;
+        min-height: 46px;
+    }
+
+    .wallet-content {
+        padding-top: 6px;
+        padding-bottom: 5px;
+    }
+
+    .balance-card {
+        flex-basis: 65px;
+        height: 65px;
+        min-height: 65px;
+    }
+
+    .big-coin {
+        width: 34px;
+        height: 34px;
+    }
+
+    .big-coin span {
+        font-size: 21px;
+    }
+
+    .coin-sellers-button {
+        flex-basis: 34px;
+        height: 34px;
+        min-height: 34px;
+        margin-top: 6px;
+    }
+
+    .plans-heading {
+        margin-top: 7px;
+        margin-bottom: 6px;
+        font-size: 14px;
+    }
+
+    .recharge-grid {
+        gap: 4px;
+    }
+
+    .package-coin {
+        width: 27px;
+        height: 27px;
+        min-width: 27px;
+        min-height: 27px;
+        font-size: 18px;
+    }
+
+    .price-button {
+        height: 23px;
+        min-height: 23px;
+        font-size: 13px;
+    }
+}
+
+
+
+/* FULL-SCREEN COIN SELLERS OVERLAY */
+
+.coin-sellers-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background: #f8f1f5;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+.coin-sellers-overlay.active {
+    display: flex;
+}
+
+.coin-sellers-panel {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    border-radius: 0;
+    background: #f8f1f5;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.coin-sellers-header {
+    flex: 0 0 60px;
+    min-height: 60px;
+    padding: 0 16px;
+    background: linear-gradient(
+        105deg,
+        #08c9c5 0%,
+        #c20ac2 55%,
+        #08c9c5 100%
+    );
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+#closeCoinSellers {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.coin-sellers-header h2 {
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.coin-sellers-content {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 16px;
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(8, 201, 197, 0.16),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(156, 100, 220, 0.16),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #E4FAF8 0%,
+            #F1ECFC 55%,
+            #EDE5FA 100%
+        );
+}
+
+
+
+/* ==============================
+   FULL-SCREEN HISTORY OVERLAY
+============================== */
+
+.history-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100000;
+    background: #FFF5F7;
+}
+
+.history-overlay.active {
+    display: flex;
+}
+
+.history-panel {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #FFF5F7;
+}
+
+.history-header {
+    height: 60px;
+    min-height: 60px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #fff;
+    background: linear-gradient(105deg, #6B2D9B, #E91E63);
+}
+
+#closeHistory {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    border: 0;
+    border-radius: 10px;
+    background: rgba(255,255,255,.2);
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.history-header h2 {
+    flex: 1;
+    margin: 0;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.history-header-space {
+    width: 34px;
+    min-width: 34px;
+}
+
+.history-content {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: #FFF5F7;
+}
+
+.history-date-card {
+    padding: 17px 14px;
+    border-radius: 18px;
+    background: #3A1F6B;
+    box-shadow: 0 5px 14px rgba(58,31,107,.12);
+}
+
+.history-date-card h3 {
+    margin: 0 0 16px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.history-date-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.history-date-field {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    color: #E8DDF8;
+    font-size: 12px;
+}
+
+.history-date-pill {
+    min-width: 0;
+    height: 42px;
+    padding: 0 8px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #281449;
+    color: #fff;
+}
+
+.history-date-pill input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #fff;
+    font: inherit;
+    font-size: 11px;
+    color-scheme: dark;
+    cursor: pointer;
+}
+
+.history-date-pill span {
+    flex-shrink: 0;
+    font-size: 10px;
+    pointer-events: none;
+}
+
+.history-record-card {
+    width: 100%;
+    padding: 15px 14px 0;
+    border: 0;
+    border-radius: 18px;
+    overflow: hidden;
+    color: #fff;
+    text-align: left;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(75, 29, 104, .16);
+    transition: transform .16s ease, box-shadow .16s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.history-coins {
+    background: linear-gradient(120deg, #6B2D9B 0%, #E91E63 100%);
+}
+
+.history-points {
+    background: linear-gradient(120deg, #492078 0%, #8060D8 100%);
+}
+
+.history-record-card:active {
+    transform: scale(.985);
+    box-shadow: 0 3px 8px rgba(75, 29, 104, .15);
+}
+
+.history-record-top {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
+    padding-bottom: 15px;
+}
+
+.history-coin-icon,
+.history-points-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.history-coin-icon {
+    background: linear-gradient(145deg, #FFEAA0, #E7A82E);
+    box-shadow: inset 0 2px 4px rgba(255,255,255,.65),
+                0 3px 7px rgba(50,15,60,.2);
+}
+
+.history-points-icon {
+    background: linear-gradient(145deg, #FFB4D0, #F06AAB);
+    color: #fff;
+    font-size: 25px;
+    font-weight: 900;
+    box-shadow: inset 0 2px 4px rgba(255,255,255,.5),
+                0 4px 8px rgba(50,15,60,.22);
+    text-shadow: 0 1px 2px rgba(150,40,100,.2);
+}
+
+.history-record-title {
+    font-size: 18px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.history-record-badge {
+    padding: 5px 8px;
+    border-radius: 8px;
+    background: rgba(67, 20, 112, .65);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.history-record-arrow {
+    margin-left: auto;
+    font-size: 29px;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.history-record-stats {
+    margin: 0 -14px;
+    padding: 14px 8px 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: rgba(48, 16, 76, .36);
+}
+
+.history-record-stats > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.history-record-stats > div + div {
+    border-left: 1px solid rgba(255,255,255,.3);
+}
+
+.history-record-stats strong {
+    font-size: 27px;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.history-record-stats span {
+    font-size: 12px;
+    color: rgba(255,255,255,.9);
+}
+
+@media (min-width: 421px) {
+    .history-overlay {
+        justify-content: center;
+    }
+
+    .history-panel {
+        max-width: 420px;
+        box-shadow: 0 0 35px rgba(40, 15, 50, .12);
+    }
+}
+
+
+/* COMPACT ANDROID HISTORY SCREEN */
+
+.history-content {
+    padding: 12px;
+    gap: 12px;
+}
+
+.history-date-card {
+    padding: 13px 12px;
+    border-radius: 16px;
+}
+
+.history-date-card h3 {
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.history-date-grid {
+    gap: 8px;
+}
+
+.history-date-pill {
+    height: 36px;
+    padding: 0 6px;
+}
+
+.history-date-pill input {
+    font-size: 10px;
+}
+
+.history-record-card {
+    padding: 12px 12px 0;
+    border-radius: 16px;
+}
+
+.history-record-top {
+    gap: 7px;
+    padding-bottom: 11px;
+}
+
+.history-coin-icon,
+.history-points-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+}
+
+.history-record-title {
+    font-size: 16px;
+}
+
+.history-record-badge {
+    padding: 4px 6px;
+    font-size: 9px;
+}
+
+.history-record-arrow {
+    font-size: 25px;
+}
+
+.history-record-stats {
+    margin: 0 -12px;
+    padding: 11px 6px 12px;
+}
+
+.history-record-stats strong {
+    font-size: 23px;
+}
+
+.history-record-stats span {
+    font-size: 11px;
+}
+
+@media (max-height: 740px) {
+    .history-content {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .history-date-card {
+        padding: 11px;
+    }
+
+    .history-record-card {
+        padding-top: 10px;
+    }
+
+    .history-record-top {
+        padding-bottom: 9px;
+    }
+
+    .history-record-stats {
+        padding-top: 9px;
+        padding-bottom: 10px;
+    }
+}

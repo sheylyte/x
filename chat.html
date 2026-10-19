@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <title>LARCK - Chat</title>
+
+    <link rel="stylesheet" href="chat.css">
+</head>
+
+<body>
+
+    <div class="chat-page">
+
+        <!-- =========================================
+             CHAT HEADER
+        ========================================== -->
+
+        <header class="chat-header">
+
+            <button
+                class="chat-back-button"
+                id="chatBackButton"
+                aria-label="Go back"
+            >
+                ‹
+            </button>
+
+            <div class="chat-user">
+
+                <div class="chat-avatar-wrapper">
+                    <img
+                        id="chatProfilePicture"
+                        src=""
+                        alt="Profile picture"
+                    >
+
+                    <span
+                        class="chat-online-dot"
+                        id="chatOnlineDot"
+                    ></span>
+                </div>
+
+                <div class="chat-user-info">
+
+                    <h1 id="chatUsername">
+                        Username
+                    </h1>
+
+                    <span id="chatStatus">
+                        Offline
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="chat-header-actions">
+
+                <button
+                    class="chat-header-button"
+                    id="videoButton"
+                    aria-label="Video call"
+                >
+                    <span class="video-icon">▮</span>
+                </button>
+
+                <button
+                    class="chat-header-button"
+                    id="moreButton"
+                    aria-label="More options"
+                >
+                    •••
+                </button>
+
+            </div>
+
+        </header>
+
+
+        
+<!-- CHAT OPTIONS MENU -->
+<div class="chat-options-menu" id="chatOptionsMenu" hidden>
+    <button type="button" data-chat-action="report">
+        <span>🚩</span> Report User
+    </button>
+    <button type="button" data-chat-action="block" class="danger-option">
+        <span>🚫</span> Block User
+    </button>
+</div>
+
+<!-- REPORT USER DIALOG -->
+<div class="chat-dialog-overlay" id="reportDialog" hidden>
+    <form class="chat-dialog" id="reportForm">
+        <h2>Report User</h2>
+        <p>Tell us why you are reporting this user.</p>
+
+        <label for="reportCategory">Reason</label>
+        <select id="reportCategory" required>
+            <option value="">Choose a reason</option>
+            <option value="Harassment">Harassment or bullying</option>
+            <option value="Scam">Scam or fraud</option>
+            <option value="Inappropriate content">Inappropriate content</option>
+            <option value="Impersonation">Impersonation</option>
+            <option value="Spam">Spam</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="reportDescription">Details</label>
+        <textarea id="reportDescription"
+            maxlength="2000"
+            placeholder="Describe what happened..."
+            required></textarea>
+
+        <div class="chat-dialog-actions">
+            <button type="button" id="cancelReportButton">Cancel</button>
+            <button type="submit" id="submitReportButton">Submit Report</button>
+        </div>
+    </form>
+</div>
+
+
+        <!-- =========================================
+             CHAT MESSAGES
+        ========================================== -->
+
+        <main
+            class="chat-messages"
+            id="chatMessages"
+        >
+
+            <div
+                class="chat-loading"
+                id="chatLoading"
+            >
+                Loading...
+            </div>
+
+        </main>
+
+
+        <!-- =========================================
+             CHAT INPUT
+        ========================================== -->
+
+        <footer class="chat-input-area">
+
+            <div class="message-input-box">
+
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Say something..."
+                    autocomplete="off"
+                    maxlength="2000"
+                >
+
+                <button
+                    class="input-action"
+                    id="cameraButton"
+                    aria-label="Camera"
+                    type="button"
+                >
+                    📷
+                </button>
+
+                <button
+                    class="input-action microphone-button"
+                    id="microphoneButton"
+                    aria-label="Microphone"
+                    type="button"
+                >
+                    🎙
+                </button>
+
+            </div>
+
+
+            <button
+                class="gift-button"
+                id="giftButton"
+                aria-label="Send gift"
+                type="button"
+            >
+                🎁
+            </button>
+
+
+            <button
+                class="send-button"
+                id="sendButton"
+                aria-label="Send message"
+                type="button"
+            >
+                ➤
+            </button>
+
+        </footer>
+
+
+    </div>
+
+
+    <!-- SUPABASE -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- CHAT JAVASCRIPT -->
+
+    <script src="chat.js"></script>
+
+</body>
+
+</html>
